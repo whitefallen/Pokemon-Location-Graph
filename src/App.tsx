@@ -40,6 +40,8 @@ const nodeTypes = {
   location: LocationNode
 };
 
+const dataAssetUrl = (fileName: string): string => `${import.meta.env.BASE_URL}data/${fileName}`;
+
 type LocationFlowNode = Node<LocationNodeData, 'location'>;
 type DatasetWithRegion = ManifestDataset & { regionName: string };
 type MethodGroup = { method: string; speciesCount: number; pokemonList: string[] };
@@ -374,7 +376,7 @@ function GraphCanvas({
         setLoading(true);
         setError(null);
         setSelectedLocationId(null);
-        const response = await fetch(`/data/${selectedFile}`);
+        const response = await fetch(dataAssetUrl(selectedFile));
         if (!response.ok) {
           throw new Error(`Failed to load dataset: ${response.status} ${response.statusText}`);
         }
@@ -683,7 +685,7 @@ function App() {
     let cancelled = false;
 
     const loadManifest = async () => {
-      const response = await fetch('/data/manifest.json');
+      const response = await fetch(dataAssetUrl('manifest.json'));
       if (!response.ok) {
         throw new Error(`Failed to load manifest: ${response.status} ${response.statusText}`);
       }
@@ -691,7 +693,7 @@ function App() {
       const datasetsWithRegions = await Promise.all(
         manifest.datasets.map(async (dataset) => {
           try {
-            const datasetResponse = await fetch(`/data/${dataset.fileName}`);
+            const datasetResponse = await fetch(dataAssetUrl(dataset.fileName));
             if (!datasetResponse.ok) {
               return { ...dataset, regionName: dataset.label };
             }
