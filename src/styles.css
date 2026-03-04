@@ -16,8 +16,9 @@ body {
 
 .dataset-strip {
   border-bottom: 1px solid rgba(130, 138, 255, 0.2);
-  background: rgba(18, 20, 34, 0.94);
-  backdrop-filter: blur(12px);
+  background: linear-gradient(165deg, rgba(29, 33, 58, 0.92), rgba(13, 14, 28, 0.95));
+  backdrop-filter: blur(14px) saturate(135%);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .app-root {
@@ -36,8 +37,8 @@ body {
 
 .shell-header {
   border-bottom: 1px solid rgba(130, 138, 255, 0.2);
-  background: rgba(14, 15, 29, 0.9);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(165deg, rgba(26, 28, 46, 0.9), rgba(12, 13, 24, 0.92));
+  backdrop-filter: blur(14px) saturate(135%);
 }
 
 .shell-main {
@@ -50,14 +51,27 @@ body {
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  border: 1px solid rgba(151, 161, 255, 0.22);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(151, 161, 255, 0.26);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 24px 44px rgba(5, 7, 16, 0.45);
   background: rgba(11, 12, 22, 0.88);
+}
+
+.graph-paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(167, 186, 255, 0.08) 0%, rgba(126, 86, 255, 0.04) 44%, transparent 72%);
+  z-index: 1;
 }
 
 .graph-flow {
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .graph-overlay {
@@ -71,7 +85,10 @@ body {
 .glass {
   background: rgba(28, 30, 49, 0.68);
   border: 1px solid rgba(153, 165, 255, 0.22);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px) saturate(130%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 14px 28px rgba(7, 9, 18, 0.24);
 }
 
 .minimap {
@@ -84,8 +101,18 @@ body {
   border-radius: 14px;
   border: 1px solid rgba(149, 161, 255, 0.34);
   padding: 10px 12px;
-  background: linear-gradient(145deg, rgba(42, 46, 74, 0.98), rgba(24, 26, 43, 0.98));
-  box-shadow: 0 7px 22px rgba(7, 9, 18, 0.35);
+  background: linear-gradient(145deg, rgba(58, 64, 103, 0.96), rgba(25, 27, 45, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 10px 24px rgba(7, 9, 18, 0.38);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.location-node:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 16px 28px rgba(10, 13, 27, 0.45);
 }
 
 .location-node-title {
@@ -99,4 +126,44 @@ body {
 .react-flow__edge-text {
   fill: #f5f7ff;
   font-weight: 700;
+}
+
+@media (max-width: 62em) {
+  .app-root {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .dataset-strip {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .shell-main {
+    min-height: 62vh;
+  }
+
+  .location-node {
+    width: 220px;
+    padding: 9px 10px;
+  }
+
+  .location-node-title {
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 48em) {
+  .dataset-strip {
+    border-bottom-color: rgba(160, 170, 255, 0.24);
+  }
+
+  .shell-header {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .graph-paper {
+    border-radius: 12px;
+  }
 }

@@ -4,6 +4,7 @@ import {
   ActionIcon,
   AppShell,
   Badge,
+  Burger,
   Card,
   Divider,
   Group,
@@ -17,6 +18,7 @@ import {
   Title,
   Tooltip
 } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { IconArrowsMove, IconChartDots, IconRefresh, IconRoute } from '@tabler/icons-react';
 import dagre from 'dagre';
 import {
@@ -362,6 +364,8 @@ function GraphCanvas({
   onDatasetChange: (fileName: string) => void;
 }) {
   const { fitView } = useReactFlow<LocationFlowNode, Edge>();
+  const [navbarOpened, { toggle: toggleNavbar, close: closeNavbar }] = useDisclosure(false);
+  const [asideOpened, { toggle: toggleAside, open: openAside }] = useDisclosure(false);
   const [nodes, setNodes, onNodesChange] = useNodesState<LocationFlowNode>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const [dataset, setDataset] = useState<LocationDataset | null>(null);
@@ -428,14 +432,23 @@ function GraphCanvas({
     <AppShell
       padding="md"
       header={{ height: 74 }}
-      navbar={{ width: 360, breakpoint: 0 }}
-      aside={{ width: 330, breakpoint: 0 }}
+      navbar={{ width: 360, breakpoint: 'md', collapsed: { mobile: !navbarOpened } }}
+      aside={{ width: 330, breakpoint: 'md', collapsed: { mobile: !asideOpened } }}
       h="100%"
       className="shell"
     >
       <AppShell.Header className="shell-header">
-        <Group h="100%" px="md" justify="space-between">
-          <Group gap="sm">
+        <Group h="100%" px="md" justify="space-between" wrap="nowrap">
+          <Group gap="xs" wrap="nowrap">
+            <Burger
+              opened={navbarOpened}
+              onClick={toggleNavbar}
+              aria-label="Toggle sidebar"
+              size="sm"
+              hiddenFrom="md"
+            />
+          </Group>
+          <Group gap="sm" wrap="nowrap">
             <ThemeIcon size="lg" radius="md" variant="gradient" gradient={{ from: 'violet', to: 'blue' }}>
               <IconChartDots size={18} />
             </ThemeIcon>
@@ -446,11 +459,20 @@ function GraphCanvas({
               </Text>
             </div>
           </Group>
-          <Tooltip label="Drag nodes, zoom, and inspect location details">
-            <ActionIcon size="lg" variant="light" color="indigo" aria-label="graph interaction hint">
-              <IconArrowsMove size={18} />
-            </ActionIcon>
-          </Tooltip>
+          <Group gap="xs" wrap="nowrap">
+            <Burger
+              opened={asideOpened}
+              onClick={toggleAside}
+              aria-label="Toggle details panel"
+              size="sm"
+              hiddenFrom="md"
+            />
+            <Tooltip label="Drag nodes, zoom, and inspect location details" visibleFrom="md">
+              <ActionIcon size="lg" variant="light" color="indigo" aria-label="graph interaction hint">
+                <IconArrowsMove size={18} />
+              </ActionIcon>
+            </Tooltip>
+          </Group>
         </Group>
       </AppShell.Header>
 
@@ -466,7 +488,13 @@ function GraphCanvas({
               </Group>
               <Select
                 value={selectedFile}
-                onChange={(value) => value && onDatasetChange(value)}
+                onChange={(value) => {
+                  if (!value) {
+                    return;
+                  }
+                  onDatasetChange(value);
+                  closeNavbar();
+                }}
                 searchable
                 data={datasets.map((dataset) => ({
                   value: dataset.fileName,
@@ -532,7 +560,10 @@ function GraphCanvas({
               edges={edges}
               onNodesChange={onNodesChange}
               onEdgesChange={onEdgesChange}
-              onNodeClick={(_, node) => setSelectedLocationId(node.id)}
+              onNodeClick={(_, node) => {
+                setSelectedLocationId(node.id);
+                openAside();
+              }}
               nodeTypes={nodeTypes}
               minZoom={0.2}
               maxZoom={1.8}
@@ -730,14 +761,14 @@ function App() {
   return (
     <Stack gap={0} h="100vh" className="app-root">
       <Card radius={0} py="xs" px="md" className="dataset-strip">
-        <Group justify="space-between" align="center">
+        <Group justify="space-between" align="center" wrap="wrap">
           <Text size="sm" c="dimmed">
             Loaded datasets: {datasets.length}
           </Text>
           <Select
             value={selectedFile}
             onChange={(value) => value && setSelectedFile(value)}
-            w={340}
+            w={{ base: '100%', sm: 340 }}
             searchable
             data={datasets.map((dataset) => ({
               value: dataset.fileName,
