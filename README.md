@@ -106,6 +106,8 @@ This project is configured as an installable PWA using `vite-plugin-pwa`.
 - Generates a `manifest.webmanifest` during build
 - Generates and registers a service worker for asset caching
 - Supports install prompt in compatible browsers when served over HTTPS (or localhost)
+- Caches `/data/*.json` with a **Network First** strategy to reduce stale dataset risk
+- Shows an in-app update banner when a newer app version is available
 
 ### Verify installability
 
@@ -113,6 +115,12 @@ This project is configured as an installable PWA using `vite-plugin-pwa`.
 2. Open the app in a Chromium-based browser or Firefox.
 3. Check for the install action in the browser UI.
 4. In DevTools > Application, verify Manifest + Service Worker are present.
+
+### PWA caching behavior
+
+- App shell assets are precached by Workbox during build.
+- Dataset files under `/data/` are runtime cached (Network First, 5s timeout, up to 24 entries, 7-day max age).
+- Outdated caches are cleaned automatically when service worker versions change.
 
 ## Add or Update Datasets
 

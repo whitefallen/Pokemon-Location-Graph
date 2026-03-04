@@ -33,7 +33,28 @@ export default defineConfig({
             },
             workbox: {
                 navigateFallback: '/index.html',
-                globPatterns: ['**/*.{js,css,html,svg,png,ico,json,webmanifest}']
+                cleanupOutdatedCaches: true,
+                globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
+                runtimeCaching: [
+                    {
+                        urlPattern: function (_a) {
+                            var url = _a.url;
+                            return url.pathname.indexOf('/data/') === 0;
+                        },
+                        handler: 'NetworkFirst',
+                        options: {
+                            cacheName: 'dataset-json-cache',
+                            networkTimeoutSeconds: 5,
+                            expiration: {
+                                maxEntries: 24,
+                                maxAgeSeconds: 60 * 60 * 24 * 7
+                            },
+                            cacheableResponse: {
+                                statuses: [0, 200]
+                            }
+                        }
+                    }
+                ]
             }
         })
     ],

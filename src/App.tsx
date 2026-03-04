@@ -1,5 +1,6 @@
 import { lazy, Suspense, useMemo, useState } from 'react';
-import { Card, Group, Loader, Select, Stack, Switch, Text } from '@mantine/core';
+import { Button, Card, Group, Loader, Select, Stack, Switch, Text } from '@mantine/core';
+import { useRegisterSW } from 'virtual:pwa-register/react';
 import { formatRegionName } from './lib/format';
 import { useDatasets } from './hooks/useDatasets';
 
@@ -8,6 +9,27 @@ const GraphExperience = lazy(() => import('./components/GraphExperience').then((
 function App() {
   const { datasets, selectedFile, setSelectedFile, isLoading, error } = useDatasets();
   const [cinematicMode, setCinematicMode] = useState(false);
+  const {
+    offlineReady: [offlineReady, setOfflineReady],
+    needRefresh: [needRefresh, setNeedRefresh],
+    updateServiceWorker
+  } = useRegisterSW({
+    onRegisteredSW: (_, registration) => {
+      if (!registration) {
+        return;
+      }
+
+      window.setInterval(() => {
+        void registration.update();
+      }, 60 * 60 * 1000);
+    }
+  });
+
+  const dismissSwMessage = () => {
+    setOfflineReady(false);
+    setNeedRefresh(false);
+  };
+
   const datasetSelectOptions = useMemo(
     () =>
       datasets.map((dataset) => ({
@@ -37,6 +59,25 @@ function App() {
 
   return (
     <Stack gap={0} h="100vh" className={`app-root ${cinematicMode ? 'cinematic-mode' : ''}`}>
+      {(offlineReady || needRefresh) && (
+        <Card radius={0} py="xs" px="md" className="dataset-strip">
+          <Group justify="space-between" align="center" wrap="wrap" gap="xs">
+            <Text size="sm" c="dimmed">
+              {needRefresh ? 'A new version is available.' : 'App is ready for offline use.'}
+            </Text>
+            <Group gap="xs" wrap="wrap">
+              {needRefresh && (
+                <Button size="xs" color="violet" onClick={() => void updateServiceWorker(true)}>
+                  Update now
+                </Button>
+              )}
+              <Button size="xs" variant="subtle" color="gray" onClick={dismissSwMessage}>
+                Dismiss
+              </Button>
+            </Group>
+          </Group>
+        </Card>
+      )}
       <Card radius={0} py="xs" px="md" className="dataset-strip">
         <Group justify="space-between" align="center" wrap="wrap">
           <Text size="sm" c="dimmed">
