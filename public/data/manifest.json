@@ -4,37 +4,43 @@
       "fileName": "pokewiki-kanto-location-model-encounters.json",
       "label": "kanto",
       "locations": 72,
-      "encounters": 1287
+      "encounters": 1287,
+      "startLocationId": "alabastia"
     },
     {
       "fileName": "pokewiki-einall-location-model-encounters.json",
       "label": "einall",
       "locations": 14,
-      "encounters": 209
+      "encounters": 209,
+      "startLocationId": "avenitia"
     },
     {
       "fileName": "pokewiki-kalos-location-model-encounters.json",
       "label": "kalos",
       "locations": 72,
-      "encounters": 339
+      "encounters": 339,
+      "startLocationId": "aquarellia"
     },
     {
       "fileName": "pokewiki-johto-location-model-encounters.json",
       "label": "johto",
       "locations": 123,
-      "encounters": 2497
+      "encounters": 2497,
+      "startLocationId": "neuborkia"
     },
     {
       "fileName": "pokewiki-hoenn-location-model-encounters.json",
       "label": "hoenn",
       "locations": 88,
-      "encounters": 1174
+      "encounters": 1174,
+      "startLocationId": "wurzelheim"
     },
     {
       "fileName": "pokewiki-sinnoh-location-model-encounters.json",
       "label": "sinnoh",
       "locations": 88,
-      "encounters": 947
+      "encounters": 947,
+      "startLocationId": "zweiblattdorf"
     }
   ]
 }

@@ -68,6 +68,7 @@ interface GraphCanvasProps {
 export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCanvasProps) {
   const { fitView } = useReactFlow<LocationFlowNode, Edge>();
   const isMobile = useMediaQuery('(max-width: 62em)');
+  const selectedDataset = useMemo(() => datasets.find((dataset) => dataset.fileName === selectedFile) ?? null, [datasets, selectedFile]);
   const [navbarOpened, { toggle: toggleNavbar, close: closeNavbar }] = useDisclosure(false);
   const [asideOpened, { toggle: toggleAside, open: openAside, close: closeAside }] = useDisclosure(false);
   const [paletteOpened, { open: openPalette, close: closePalette }] = useDisclosure(false);
@@ -89,7 +90,8 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
     clearSelectedLocation
   } = useGraphDataset(
     selectedFile,
-    datasets.map((dataset) => dataset.fileName)
+    datasets.map((dataset) => dataset.fileName),
+    selectedDataset?.startLocationId
   );
 
   const { groupedChecklist, completionByGeneration, incompleteLocations, isCaught, toggleCaught, resetChecklist } = useCaughtChecklist(

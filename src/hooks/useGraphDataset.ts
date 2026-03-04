@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Edge, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
 import { dataAssetUrl } from '../lib/assets';
-import { buildGraph, LocationFlowNode } from '../lib/graph';
+import { buildGraph, LocationFlowNode, NODE_HEIGHT, NODE_WIDTH } from '../lib/graph';
 import { LocationDataset } from '../types';
 
 const datasetCache = new Map<string, LocationDataset>();
@@ -67,9 +67,16 @@ function getGraphWorker(): Worker | null {
 }
 
 async function buildGraphAsync(dataset: LocationDataset): Promise<{ nodes: LocationFlowNode[]; edges: Edge[] }> {
+  return buildGraphAsyncWithStart(dataset, undefined);
+}
+
+async function buildGraphAsyncWithStart(
+  dataset: LocationDataset,
+  startLocationId?: string
+): Promise<{ nodes: LocationFlowNode[]; edges: Edge[] }> {
   const worker = getGraphWorker();
   if (!worker) {
-    return buildGraph(dataset);
+    return buildGraph(dataset, startLocationId);
   }
 
   const id = ++workerRequestId;
@@ -77,7 +84,7 @@ async function buildGraphAsync(dataset: LocationDataset): Promise<{ nodes: Locat
     workerPending.set(id, { resolve, reject });
   });
 
-  worker.postMessage({ id, dataset });
+  worker.postMessage({ id, dataset, startLocationId });
   return response;
 }
 
@@ -127,8 +134,8 @@ interface UseGraphDatasetResult {
   clearSelectedLocation: () => void;
 }
 
-export function useGraphDataset(selectedFile: string, datasetFiles?: string[]): UseGraphDatasetResult {
-  const { fitView } = useReactFlow<LocationFlowNode, Edge>();
+export function useGraphDataset(selectedFile: string, datasetFiles?: string[], startLocationId?: string): UseGraphDatasetResult {
+  const { fitView, setCenter } = useReactFlow<LocationFlowNode, Edge>();
   const [nodes, setNodes, onNodesChange] = useNodesState<LocationFlowNode>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const [dataset, setDataset] = useState<LocationDataset | null>(null);
@@ -150,10 +157,11 @@ export function useGraphDataset(selectedFile: string, datasetFiles?: string[]): 
           return;
         }
 
-        let graph = graphCache.get(selectedFile);
+        const graphCacheKey = `${selectedFile}::${startLocationId ?? ''}`;
+        let graph = graphCache.get(graphCacheKey);
         if (!graph) {
-          graph = await buildGraphAsync(payload);
-          graphCache.set(selectedFile, {
+          graph = await buildGraphAsyncWithStart(payload, startLocationId);
+          graphCache.set(graphCacheKey, {
             nodes: cloneNodes(graph.nodes),
             edges: cloneEdges(graph.edges)
           });
@@ -165,6 +173,17 @@ export function useGraphDataset(selectedFile: string, datasetFiles?: string[]): 
 
         requestAnimationFrame(() => {
           const shouldAnimateFit = payload.locations.length < 70;
+          if (startLocationId) {
+            const startNode = graph?.nodes.find((node) => node.id === startLocationId);
+            if (startNode && Number.isFinite(startNode.position.x) && Number.isFinite(startNode.position.y)) {
+              void setCenter(startNode.position.x + NODE_WIDTH / 2, startNode.position.y + NODE_HEIGHT / 2, {
+                zoom: 0.85,
+                duration: shouldAnimateFit ? 260 : 0
+              });
+              return;
+            }
+          }
+
           void fitView({
             padding: 0.2,
             duration: shouldAnimateFit ? 260 : 0,
@@ -187,11 +206,11 @@ export function useGraphDataset(selectedFile: string, datasetFiles?: string[]): 
     return () => {
       cancelled = true;
     };
-  }, [fitView, selectedFile, setEdges, setNodes]);
+  }, [fitView, selectedFile, setCenter, setEdges, setNodes, startLocationId]);
 
   useEffect(() => {
     const files = datasetFiles ?? [];
-    const candidates = files.filter((fileName) => fileName !== selectedFile && !graphCache.has(fileName));
+    const candidates = files.filter((fileName) => fileName !== selectedFile && !graphCache.has(`${fileName}::`));
     if (candidates.length === 0) {
       return;
     }
@@ -205,13 +224,13 @@ export function useGraphDataset(selectedFile: string, datasetFiles?: string[]): 
 
     const prefetch = async () => {
       for (const fileName of candidates.slice(0, maxPrefetch)) {
-        if (cancelled || graphCache.has(fileName)) {
+        if (cancelled || graphCache.has(`${fileName}::`)) {
           continue;
         }
 
         try {
           const payload = await loadDatasetPayload(fileName);
-          if (cancelled || graphCache.has(fileName)) {
+          if (cancelled || graphCache.has(`${fileName}::`)) {
             continue;
           }
 
@@ -220,7 +239,7 @@ export function useGraphDataset(selectedFile: string, datasetFiles?: string[]): 
             continue;
           }
 
-          graphCache.set(fileName, {
+          graphCache.set(`${fileName}::`, {
             nodes: cloneNodes(graph.nodes),
             edges: cloneEdges(graph.edges)
           });

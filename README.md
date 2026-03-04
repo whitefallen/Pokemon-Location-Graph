@@ -61,7 +61,8 @@ Interactive React app that visualizes Pokémon world locations as a directed gra
       "fileName": "example-region-location-model-encounters.json",
       "label": "example-region",
       "locations": 72,
-      "encounters": 1287
+      "encounters": 1287,
+      "startLocationId": "starter_town_id"
     }
   ]
 }
@@ -74,6 +75,11 @@ Each dataset should include:
 - `source`: generator/source identifier
 - `generatedAt`: timestamp string
 - `locations`: array of location objects
+
+Manifest notes:
+
+- `startLocationId` is optional but recommended.
+- When present, graph layout starts at this node and expands by directional connections (`north`, `east`, `south`, `west`, diagonals).
 
 Each location object should include:
 

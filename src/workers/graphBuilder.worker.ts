@@ -4,6 +4,7 @@ import { LocationDataset } from '../types';
 type BuildRequestMessage = {
   id: number;
   dataset: LocationDataset;
+  startLocationId?: string;
 };
 
 type BuildSuccessMessage = {
@@ -17,10 +18,10 @@ type BuildErrorMessage = {
 };
 
 self.onmessage = (event: MessageEvent<BuildRequestMessage>) => {
-  const { id, dataset } = event.data;
+  const { id, dataset, startLocationId } = event.data;
 
   try {
-    const graph = buildGraph(dataset);
+    const graph = buildGraph(dataset, startLocationId);
     const message: BuildSuccessMessage = { id, graph };
     self.postMessage(message);
   } catch (error) {

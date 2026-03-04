@@ -7,6 +7,7 @@ export interface ManifestDataset {
   label: string;
   locations: number;
   encounters: number;
+  startLocationId?: string;
 }
 
 export interface Encounter {
