@@ -6,7 +6,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["icons/pwa-192.svg", "icons/pwa-512.svg", "favicon.svg"],
+      includeAssets: ["icons/pwa-192.png", "icons/pwa-512.png", "favicon.svg"],
+      devOptions: {
+        enabled: true,
+        type: "module",
+      },
       manifest: {
         name: "Pokémon Location Encounter Graph",
         short_name: "Pokémon Graph",
@@ -19,15 +23,15 @@ export default defineConfig({
         scope: "/",
         icons: [
           {
-            src: "/icons/pwa-192.svg",
+            src: "/icons/pwa-192.png",
             sizes: "192x192",
-            type: "image/svg+xml",
+            type: "image/png",
             purpose: "any",
           },
           {
-            src: "/icons/pwa-512.svg",
+            src: "/icons/pwa-512.png",
             sizes: "512x512",
-            type: "image/svg+xml",
+            type: "image/png",
             purpose: "any maskable",
           },
         ],
