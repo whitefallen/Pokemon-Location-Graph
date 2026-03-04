@@ -1,0 +1,1 @@
+export const dataAssetUrl = (fileName: string): string => `${import.meta.env.BASE_URL}data/${fileName}`;

@@ -1,5 +1,18 @@
 :root {
   color-scheme: dark;
+  --app-bg-start: #2b2c5f;
+  --app-bg-mid: #0f1020;
+  --app-bg-end: #090911;
+  --surface-header-1: rgba(29, 33, 58, 0.92);
+  --surface-header-2: rgba(13, 14, 28, 0.95);
+  --surface-panel: rgba(28, 30, 49, 0.68);
+  --surface-panel-border: rgba(153, 165, 255, 0.22);
+  --surface-panel-highlight: rgba(255, 255, 255, 0.07);
+  --surface-graph: rgba(11, 12, 22, 0.88);
+  --surface-graph-border: rgba(151, 161, 255, 0.26);
+  --glow-shadow: rgba(7, 9, 18, 0.24);
+  --focus-ring: rgba(151, 173, 255, 0.82);
+  --accent-soft: rgba(149, 168, 255, 0.24);
 }
 
 html,
@@ -11,18 +24,43 @@ body,
 }
 
 body {
-  background: radial-gradient(1200px 700px at 12% 12%, #2b2c5f 0%, #0f1020 55%, #090911 100%);
+  background: radial-gradient(1200px 700px at 12% 12%, var(--app-bg-start) 0%, var(--app-bg-mid) 55%, var(--app-bg-end) 100%);
+  color: #f4f6ff;
+}
+
+button:focus-visible,
+input:focus-visible,
+[role='button']:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 .dataset-strip {
   border-bottom: 1px solid rgba(130, 138, 255, 0.2);
-  background: linear-gradient(165deg, rgba(29, 33, 58, 0.92), rgba(13, 14, 28, 0.95));
+  background: linear-gradient(165deg, var(--surface-header-1), var(--surface-header-2));
   backdrop-filter: blur(14px) saturate(135%);
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.dataset-strip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, rgba(178, 188, 255, 0.08), transparent 38%, rgba(167, 127, 255, 0.06));
 }
 
 .app-root {
   min-height: 100vh;
+}
+
+.cinematic-toggle {
+  padding-inline: 8px;
+  border: 1px solid rgba(147, 160, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(24, 27, 47, 0.5);
 }
 
 .app-graph-shell {
@@ -41,24 +79,29 @@ body {
   backdrop-filter: blur(14px) saturate(135%);
 }
 
+.shell-navbar,
+.shell-aside {
+  background: linear-gradient(180deg, rgba(17, 19, 33, 0.72), rgba(12, 13, 24, 0.54));
+}
+
 .shell-main {
   height: 100%;
   min-height: 0;
 }
 
-.graph-paper {
+.graph-surface {
   position: relative;
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  border: 1px solid rgba(151, 161, 255, 0.26);
+  border: 1px solid var(--surface-graph-border);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.03),
     0 24px 44px rgba(5, 7, 16, 0.45);
-  background: rgba(11, 12, 22, 0.88);
+  background: var(--surface-graph);
 }
 
-.graph-paper::before {
+.graph-surface::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -67,11 +110,129 @@ body {
   z-index: 1;
 }
 
+.graph-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(550px 240px at 20% -6%, rgba(156, 170, 255, 0.15), transparent 55%),
+    radial-gradient(580px 260px at 88% 108%, rgba(95, 130, 255, 0.12), transparent 56%);
+  z-index: 1;
+}
+
+.react-flow__controls {
+  border: 1px solid rgba(153, 168, 255, 0.35) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  backdrop-filter: blur(8px) saturate(130%);
+  box-shadow: 0 10px 24px rgba(7, 10, 20, 0.35);
+}
+
+.react-flow__controls button {
+  background: rgba(37, 41, 66, 0.92) !important;
+  color: #e9eeff !important;
+  border-bottom-color: rgba(142, 157, 245, 0.2) !important;
+}
+
+.react-flow__controls button:hover {
+  background: rgba(66, 76, 121, 0.95) !important;
+}
+
 .graph-flow {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 2;
+}
+
+.spiced-flow {
+  --xy-edge-stroke-default: rgba(148, 162, 255, 0.7);
+}
+
+.react-flow__node {
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.react-flow__node:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 10px 18px rgba(9, 13, 30, 0.45));
+}
+
+.react-flow__node.selected .location-node {
+  border-color: rgba(198, 209, 255, 0.68);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 0 1px rgba(168, 186, 255, 0.4),
+    0 20px 34px rgba(11, 15, 35, 0.55);
+}
+
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(202, 214, 255, 0.8);
+  background: rgba(99, 129, 255, 0.95);
+  box-shadow: 0 0 10px rgba(119, 145, 255, 0.5);
+}
+
+.react-flow__edge-path {
+  stroke: rgba(144, 161, 255, 0.74);
+  stroke-width: 1.7;
+  filter: drop-shadow(0 0 5px rgba(112, 139, 255, 0.3));
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: rgba(198, 209, 255, 0.92);
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 9px rgba(133, 163, 255, 0.52));
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke-dasharray: 6 6;
+  animation: edgeFlowPulse 1.2s linear infinite;
+}
+
+.spiced-flow.graph-lite .react-flow__edge-path {
+  filter: none;
+  stroke-width: 1.5;
+}
+
+.spiced-flow.graph-lite .react-flow__edge:hover .react-flow__edge-path,
+.spiced-flow.graph-lite .react-flow__edge.selected .react-flow__edge-path {
+  stroke-width: 1.8;
+  filter: none;
+}
+
+.spiced-flow.graph-lite .react-flow__node {
+  transition: transform 120ms ease;
+}
+
+.spiced-flow.graph-lite .react-flow__node:hover {
+  filter: none;
+}
+
+.spiced-flow.graph-lite .react-flow__handle {
+  box-shadow: none;
+}
+
+.spiced-flow.reachability-mode .react-flow__node.node-dimmed {
+  opacity: 0.32;
+  filter: saturate(0.6);
+}
+
+.spiced-flow.reachability-mode .react-flow__node.node-reachable {
+  opacity: 1;
+}
+
+.spiced-flow.reachability-mode .react-flow__edge.edge-dimmed .react-flow__edge-path {
+  opacity: 0.24;
+}
+
+.spiced-flow.reachability-mode .react-flow__edge.edge-reachable .react-flow__edge-path {
+  opacity: 1;
+  stroke: rgba(206, 216, 255, 0.95);
+  stroke-width: 2.2;
 }
 
 .graph-overlay {
@@ -82,18 +243,47 @@ body {
   backdrop-filter: blur(1px);
 }
 
-.glass {
-  background: rgba(28, 30, 49, 0.68);
-  border: 1px solid rgba(153, 165, 255, 0.22);
+.glass-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-panel);
+  border: 1px solid var(--surface-panel-border);
   backdrop-filter: blur(14px) saturate(130%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    0 14px 28px rgba(7, 9, 18, 0.24);
+    inset 0 1px 0 var(--surface-panel-highlight),
+    0 14px 28px var(--glow-shadow);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(155deg, rgba(198, 208, 255, 0.09), transparent 36%, rgba(118, 85, 255, 0.06));
+}
+
+.glass-panel:hover {
+  border-color: rgba(166, 178, 255, 0.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 18px 34px rgba(6, 9, 21, 0.32);
+}
+
+.glass-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.touch-target {
+  min-width: 40px;
+  min-height: 40px;
 }
 
 .minimap {
   border: 1px solid rgba(170, 184, 255, 0.2);
-  background: rgba(19, 22, 37, 0.75) !important;
+  background: rgba(19, 22, 37, 0.8) !important;
+  box-shadow: 0 8px 16px rgba(7, 10, 20, 0.3);
 }
 
 .location-node {
@@ -115,17 +305,177 @@ body {
     0 16px 28px rgba(10, 13, 27, 0.45);
 }
 
+.app-title {
+  letter-spacing: 0.01em;
+  background: linear-gradient(110deg, #f5f7ff 0%, #d9e1ff 46%, #b9cbff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.app-subtitle {
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 75em) {
+  .shell-header {
+    border-bottom-color: rgba(167, 178, 255, 0.28);
+    box-shadow:
+      0 8px 24px rgba(6, 10, 21, 0.3),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .shell-navbar,
+  .shell-aside {
+    border-right: 1px solid rgba(156, 170, 255, 0.16);
+    border-left: 1px solid rgba(156, 170, 255, 0.12);
+    backdrop-filter: blur(16px) saturate(132%);
+  }
+
+  .glass-panel {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.11),
+      0 20px 38px rgba(6, 9, 21, 0.34);
+  }
+
+  .glass-panel:hover {
+    transform: translateY(-2px);
+    border-color: rgba(186, 195, 255, 0.4);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.13),
+      0 26px 46px rgba(8, 12, 27, 0.42);
+  }
+
+  .graph-surface {
+    border-color: rgba(172, 183, 255, 0.34);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 34px 58px rgba(5, 8, 20, 0.5);
+  }
+
+  .graph-surface::after {
+    background:
+      radial-gradient(700px 300px at 18% -10%, rgba(166, 182, 255, 0.2), transparent 56%),
+      radial-gradient(760px 330px at 88% 114%, rgba(106, 142, 255, 0.16), transparent 58%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 28%);
+    animation: desktopAmbientShift 18s ease-in-out infinite alternate;
+  }
+
+  .app-title {
+    text-shadow: 0 1px 16px rgba(154, 177, 255, 0.22);
+  }
+
+  .app-subtitle {
+    color: #c4ceef !important;
+  }
+
+  .cinematic-mode .shell-header {
+    box-shadow:
+      0 14px 34px rgba(4, 8, 20, 0.45),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .cinematic-mode .graph-surface {
+    border-color: rgba(189, 198, 255, 0.45);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+      0 40px 70px rgba(4, 7, 20, 0.56);
+  }
+
+  .cinematic-mode .graph-surface::after {
+    background:
+      radial-gradient(760px 320px at 18% -12%, rgba(177, 191, 255, 0.27), transparent 56%),
+      radial-gradient(860px 360px at 89% 115%, rgba(115, 151, 255, 0.23), transparent 58%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 28%);
+  }
+
+  .cinematic-mode .glass-panel {
+    border-color: rgba(185, 195, 255, 0.42);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      0 26px 46px rgba(5, 8, 22, 0.44);
+  }
+
+  .cinematic-mode .app-title {
+    text-shadow: 0 2px 20px rgba(157, 182, 255, 0.34);
+  }
+}
+
+@keyframes desktopAmbientShift {
+  0% {
+    opacity: 0.82;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
 .location-node-title {
   max-width: 155px;
 }
 
 .react-flow__edge-textbg {
-  fill: rgba(90, 102, 191, 0.95);
+  fill: rgba(88, 102, 196, 0.96);
+  stroke: rgba(195, 206, 255, 0.2);
+  stroke-width: 0.8;
 }
 
 .react-flow__edge-text {
   fill: #f5f7ff;
   font-weight: 700;
+}
+
+@keyframes edgeFlowPulse {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+.details-drawer-content {
+  background: linear-gradient(160deg, rgba(24, 27, 47, 0.95), rgba(14, 15, 28, 0.96)) !important;
+  border-top: 1px solid rgba(160, 172, 255, 0.25);
+  box-shadow: 0 -20px 44px rgba(5, 8, 18, 0.48);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.details-drawer-body {
+  position: relative;
+  padding-top: 16px;
+}
+
+.details-drawer-body::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(189, 198, 255, 0.5);
+}
+
+.command-palette-content {
+  border: 1px solid rgba(166, 180, 255, 0.3);
+  background: linear-gradient(165deg, rgba(23, 26, 46, 0.95), rgba(12, 14, 26, 0.96));
+  box-shadow: 0 24px 48px rgba(5, 8, 18, 0.5);
+}
+
+.command-item {
+  padding: 9px 10px;
+  border: 1px solid rgba(153, 168, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(27, 30, 52, 0.45);
+  transition: border-color 140ms ease, transform 140ms ease, background-color 140ms ease;
+}
+
+.command-item:hover {
+  border-color: rgba(182, 194, 255, 0.42);
+  background: rgba(47, 53, 88, 0.6);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 62em) {
@@ -135,21 +485,52 @@ body {
   }
 
   .dataset-strip {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    backdrop-filter: blur(10px) saturate(115%);
   }
 
   .shell-main {
     min-height: 62vh;
   }
 
+  .glass-panel {
+    backdrop-filter: blur(10px) saturate(112%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 10px 20px rgba(7, 9, 18, 0.2);
+  }
+
+  .glass-panel::before {
+    background: linear-gradient(155deg, rgba(198, 208, 255, 0.05), transparent 40%, rgba(118, 85, 255, 0.04));
+  }
+
   .location-node {
     width: 220px;
-    padding: 9px 10px;
+    padding: 8px 10px;
   }
 
   .location-node-title {
     max-width: 130px;
+  }
+
+  .app-subtitle {
+    opacity: 0.88;
+  }
+
+  .details-drawer-body {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 14px;
+  }
+
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .cinematic-toggle {
+    padding-inline: 6px;
   }
 }
 
@@ -163,7 +544,105 @@ body {
     padding-right: 4px;
   }
 
-  .graph-paper {
+  .shell-header .mantine-Group-root {
+    gap: 6px;
+  }
+
+  .app-title {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .app-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .graph-surface {
     border-radius: 12px;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+      0 14px 24px rgba(5, 7, 16, 0.33);
+  }
+
+  .graph-surface::after {
+    background:
+      radial-gradient(380px 180px at 18% -5%, rgba(156, 170, 255, 0.1), transparent 56%),
+      radial-gradient(420px 180px at 88% 108%, rgba(95, 130, 255, 0.08), transparent 60%);
+  }
+
+  .details-drawer-content {
+    box-shadow: 0 -14px 28px rgba(5, 8, 18, 0.38);
+  }
+
+  .details-drawer-body .location-details-header {
+    margin-bottom: 0.45rem;
+  }
+
+  .details-drawer-body .location-details-stack {
+    gap: 0.5rem;
+  }
+
+  .details-drawer-body .location-details-stack h4 {
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .details-drawer-body .location-badges {
+    gap: 0.35rem;
+  }
+
+  .details-drawer-body .location-badges .mantine-Badge-root {
+    font-size: 0.67rem;
+    line-height: 1.2;
+    padding-inline: 0.45rem;
+  }
+
+  .details-drawer-body .details-accordion .mantine-Accordion-control {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .details-drawer-body .details-accordion .mantine-Accordion-panel {
+    padding-top: 0.35rem;
+    padding-bottom: 0.45rem;
+  }
+
+  .details-drawer-body .details-accordion .mantine-Accordion-label {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .app-subtitle {
+    display: none;
+  }
+
+  .dataset-strip {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .details-drawer-body {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 12px;
+  }
+
+  .details-drawer-body .location-details-stack h4 {
+    font-size: 0.98rem;
+  }
+
+  .details-drawer-body .details-accordion .mantine-Accordion-control {
+    padding: 0.46rem 0.54rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

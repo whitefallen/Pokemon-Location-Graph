@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Badge, Group, Stack, Text, ThemeIcon, Tooltip } from '@mantine/core';
 import { IconMapPin, IconPokeball } from '@tabler/icons-react';
 import { Handle, Position } from '@xyflow/react';
@@ -14,7 +15,7 @@ interface LocationNodeProps {
   data: LocationNodeData;
 }
 
-export function LocationNode({ data }: LocationNodeProps) {
+export const LocationNode = memo(function LocationNode({ data }: LocationNodeProps) {
   return (
     <>
       <Handle type="target" position={Position.Left} />
@@ -49,4 +50,4 @@ export function LocationNode({ data }: LocationNodeProps) {
       <Handle type="source" position={Position.Right} />
     </>
   );
-}
+});
