@@ -6,6 +6,13 @@ import '@xyflow/react/dist/style.css';
 import App from './App';
 import './styles.css';
 
+if (typeof window !== 'undefined') {
+  const isFirefox = /firefox/i.test(window.navigator.userAgent);
+  if (isFirefox) {
+    document.documentElement.setAttribute('data-browser', 'firefox');
+  }
+}
+
 const theme = createTheme({
   defaultRadius: 'lg',
   primaryColor: 'violet',

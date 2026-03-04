@@ -1,5 +1,5 @@
-import { Badge, Divider, Group, SegmentedControl, Select, Stack, Switch, Text } from '@mantine/core';
-import { IconRoute } from '@tabler/icons-react';
+import { Badge, Button, Divider, Group, SegmentedControl, Select, Stack, Text } from '@mantine/core';
+import { IconChecklist, IconRoute } from '@tabler/icons-react';
 import { GlassPanel } from './ui/GlassPanel';
 import { DatasetWithRegion } from '../types/ui';
 import { formatRegionName } from '../lib/format';
@@ -15,10 +15,9 @@ interface GraphSidebarProps {
   generatedAt?: string;
   fastRenderMode: FastRenderMode;
   onFastRenderModeChange: (mode: FastRenderMode) => void;
-  reachabilityMode: boolean;
-  onReachabilityModeChange: (enabled: boolean) => void;
-  hasSelectedLocation: boolean;
-  reachableNodesCount: number;
+  incompleteChecklistCount: number;
+  checklistTotalCount: number;
+  onOpenChecklist: () => void;
 }
 
 export function GraphSidebar({
@@ -31,10 +30,9 @@ export function GraphSidebar({
   generatedAt,
   fastRenderMode,
   onFastRenderModeChange,
-  reachabilityMode,
-  onReachabilityModeChange,
-  hasSelectedLocation,
-  reachableNodesCount
+  incompleteChecklistCount,
+  checklistTotalCount,
+  onOpenChecklist
 }: GraphSidebarProps) {
   return (
     <Stack gap="md" h="100%">
@@ -70,7 +68,7 @@ export function GraphSidebar({
 
       <GlassPanel>
         <Stack gap="sm">
-          <Text fw={700}>Render & Reachability</Text>
+          <Text fw={700}>Render Quality</Text>
           <SegmentedControl
             value={fastRenderMode}
             onChange={(value) => onFastRenderModeChange(value as FastRenderMode)}
@@ -80,13 +78,6 @@ export function GraphSidebar({
               { label: 'Quality', value: 'quality' }
             ]}
             fullWidth
-          />
-          <Switch
-            checked={reachabilityMode}
-            onChange={(event) => onReachabilityModeChange(event.currentTarget.checked)}
-            disabled={!hasSelectedLocation}
-            label="Reachability mode"
-            description={hasSelectedLocation ? `${reachableNodesCount} reachable locations` : 'Select a location first'}
           />
         </Stack>
       </GlassPanel>
@@ -116,6 +107,23 @@ export function GraphSidebar({
             </Text>
             <Text size="sm">{generatedAt ? new Date(generatedAt).toLocaleDateString() : '-'}</Text>
           </Group>
+        </Stack>
+      </GlassPanel>
+
+      <GlassPanel>
+        <Stack gap="sm">
+          <Group justify="space-between">
+            <Text fw={700}>Checklist</Text>
+            <Badge color={incompleteChecklistCount === 0 ? 'teal' : 'orange'} variant="light">
+              {incompleteChecklistCount}/{checklistTotalCount}
+            </Badge>
+          </Group>
+          <Text size="sm" c="dimmed">
+            {incompleteChecklistCount === 0 ? 'All location-generation groups are complete.' : 'Open catch checklist to mark progress.'}
+          </Text>
+          <Button variant="light" leftSection={<IconChecklist size={16} />} onClick={onOpenChecklist}>
+            Open checklist
+          </Button>
         </Stack>
       </GlassPanel>
       <Text size="xs" c="dimmed" ta="center" mt="auto">

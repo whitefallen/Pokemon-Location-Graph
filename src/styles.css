@@ -216,23 +216,31 @@ input:focus-visible,
   box-shadow: none;
 }
 
-.spiced-flow.reachability-mode .react-flow__node.node-dimmed {
-  opacity: 0.32;
-  filter: saturate(0.6);
+html[data-browser='firefox'] .dataset-strip,
+html[data-browser='firefox'] .shell-header,
+html[data-browser='firefox'] .react-flow__controls,
+html[data-browser='firefox'] .graph-overlay,
+html[data-browser='firefox'] .glass-panel {
+  backdrop-filter: none;
 }
 
-.spiced-flow.reachability-mode .react-flow__node.node-reachable {
-  opacity: 1;
+html[data-browser='firefox'] .react-flow__node {
+  transition: transform 120ms ease;
 }
 
-.spiced-flow.reachability-mode .react-flow__edge.edge-dimmed .react-flow__edge-path {
-  opacity: 0.24;
+html[data-browser='firefox'] .react-flow__node:hover {
+  filter: none;
 }
 
-.spiced-flow.reachability-mode .react-flow__edge.edge-reachable .react-flow__edge-path {
-  opacity: 1;
-  stroke: rgba(206, 216, 255, 0.95);
-  stroke-width: 2.2;
+html[data-browser='firefox'] .react-flow__edge-path,
+html[data-browser='firefox'] .react-flow__edge.selected .react-flow__edge-path,
+html[data-browser='firefox'] .react-flow__edge:hover .react-flow__edge-path {
+  filter: none;
+}
+
+html[data-browser='firefox'] .react-flow__edge.animated .react-flow__edge-path {
+  animation: none;
+  stroke-dasharray: none;
 }
 
 .graph-overlay {

@@ -1,4 +1,4 @@
-import { Encounter, LocationModel } from '../types';
+import { Encounter, LocationDataset, LocationModel } from '../types';
 import { formatRegionName } from './format';
 
 export type MethodGroup = { method: string; speciesCount: number; pokemonList: string[] };
@@ -17,6 +17,17 @@ export type InstallmentGroup = {
   note?: string;
   sortGeneration?: number;
   sortGame?: string;
+};
+
+export type GenerationLocationSpecies = {
+  generationKey: string;
+  generationLabel: string;
+  generationOrder: number;
+  locations: {
+    locationId: string;
+    locationName: string;
+    species: string[];
+  }[];
 };
 
 const REGION_INSTALLMENTS: Record<string, InstallmentDefinition[]> = {
@@ -117,6 +128,92 @@ function formatVersionGroupLabel(versionGroup: string): string {
 
 function gamesForVersionGroup(versionGroup: string): string[] {
   return VERSION_GROUP_DISPLAY[versionGroup]?.games ?? [formatVersionGroupLabel(versionGroup)];
+}
+
+function normalizePokemonName(value: string): string {
+  return value.trim().toLowerCase();
+}
+
+function toGenerationKey(encounter: Encounter): { key: string; label: string; order: number } {
+  if (typeof encounter.generationId === 'number' && encounter.generationId > 0) {
+    const label = encounter.generationName ?? generationLabelFromId(encounter.generationId);
+    return {
+      key: `gen-${encounter.generationId}`,
+      label,
+      order: encounter.generationId
+    };
+  }
+
+  const label = encounter.generationName?.trim() || generationLabelFromId(undefined);
+  return {
+    key: `gen-name-${label.toLowerCase().replace(/\s+/g, '-')}`,
+    label,
+    order: Number.MAX_SAFE_INTEGER
+  };
+}
+
+export function buildGenerationLocationSpecies(dataset: LocationDataset): GenerationLocationSpecies[] {
+  const grouped = new Map<
+    string,
+    {
+      label: string;
+      order: number;
+      locations: Map<string, { locationName: string; speciesByKey: Map<string, string> }>;
+    }
+  >();
+
+  for (const location of dataset.locations) {
+    for (const encounter of location.encounters) {
+      const generation = toGenerationKey(encounter);
+      const generationGroup =
+        grouped.get(generation.key) ??
+        {
+          label: generation.label,
+          order: generation.order,
+          locations: new Map<string, { locationName: string; speciesByKey: Map<string, string> }>()
+        };
+
+      if (!grouped.has(generation.key)) {
+        grouped.set(generation.key, generationGroup);
+      }
+
+      const locationEntry =
+        generationGroup.locations.get(location.id) ??
+        {
+          locationName: location.name,
+          speciesByKey: new Map<string, string>()
+        };
+
+      if (!generationGroup.locations.has(location.id)) {
+        generationGroup.locations.set(location.id, locationEntry);
+      }
+
+      const normalizedPokemon = normalizePokemonName(encounter.pokemon);
+      if (!locationEntry.speciesByKey.has(normalizedPokemon)) {
+        locationEntry.speciesByKey.set(normalizedPokemon, encounter.pokemon.trim());
+      }
+    }
+  }
+
+  return [...grouped.entries()]
+    .map(([generationKey, generationGroup]) => ({
+      generationKey,
+      generationLabel: generationGroup.label,
+      generationOrder: generationGroup.order,
+      locations: [...generationGroup.locations.entries()]
+        .map(([locationId, locationEntry]) => ({
+          locationId,
+          locationName: locationEntry.locationName,
+          species: [...locationEntry.speciesByKey.values()].sort((left, right) => left.localeCompare(right))
+        }))
+        .sort((left, right) => left.locationName.localeCompare(right.locationName))
+    }))
+    .sort((left, right) => {
+      if (left.generationOrder !== right.generationOrder) {
+        return left.generationOrder - right.generationOrder;
+      }
+      return left.generationLabel.localeCompare(right.generationLabel);
+    });
 }
 
 export function countUniquePokemon(location: LocationModel): number {

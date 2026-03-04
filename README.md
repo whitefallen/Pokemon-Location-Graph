@@ -99,6 +99,21 @@ npm run build
 npm run preview
 ```
 
+## Progressive Web App (PWA)
+
+This project is configured as an installable PWA using `vite-plugin-pwa`.
+
+- Generates a `manifest.webmanifest` during build
+- Generates and registers a service worker for asset caching
+- Supports install prompt in compatible browsers when served over HTTPS (or localhost)
+
+### Verify installability
+
+1. Run `npm run build` then `npm run preview`.
+2. Open the app in a Chromium-based browser or Firefox.
+3. Check for the install action in the browser UI.
+4. In DevTools > Application, verify Manifest + Service Worker are present.
+
 ## Add or Update Datasets
 
 1. Add a dataset file under `public/data/`.

@@ -14,9 +14,19 @@ import { IconRefresh } from '@tabler/icons-react';
 import { LocationModel } from '../types';
 import { countUniquePokemon, InstallmentGroup } from '../lib/encounters';
 
+type ChecklistGenerationCompletion = {
+  generationKey: string;
+  generationLabel: string;
+  caught: number;
+  total: number;
+  complete: boolean;
+};
+
 interface LocationDetailsPanelProps {
   selectedLocation: LocationModel | null;
   installmentGroups: InstallmentGroup[];
+  checklistCompletion: ChecklistGenerationCompletion[];
+  onOpenChecklistGeneration: (generationKey: string) => void;
   onClear: () => void;
   encounterScrollHeight: number;
   connectionsScrollHeight: number;
@@ -25,6 +35,8 @@ interface LocationDetailsPanelProps {
 export function LocationDetailsPanel({
   selectedLocation,
   installmentGroups,
+  checklistCompletion,
+  onOpenChecklistGeneration,
   onClear,
   encounterScrollHeight,
   connectionsScrollHeight
@@ -58,6 +70,31 @@ export function LocationDetailsPanel({
                   {countUniquePokemon(selectedLocation)} species
                 </Badge>
               </Group>
+
+              <Divider my={4} />
+              <Text size="sm" fw={600}>
+                Checklist progress
+              </Text>
+              {checklistCompletion.length === 0 && (
+                <Text c="dimmed" size="sm">
+                  No generation checklist entries for this location.
+                </Text>
+              )}
+              {checklistCompletion.length > 0 && (
+                <Group gap={6} wrap="wrap">
+                  {checklistCompletion.map((entry) => (
+                    <Badge
+                      key={`${selectedLocation.id}-${entry.generationKey}`}
+                      color={entry.complete ? 'teal' : 'orange'}
+                      variant="light"
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => onOpenChecklistGeneration(entry.generationKey)}
+                    >
+                      {entry.generationLabel}: {entry.caught}/{entry.total}
+                    </Badge>
+                  ))}
+                </Group>
+              )}
 
               <Divider my={4} />
               <Text size="sm" fw={600}>

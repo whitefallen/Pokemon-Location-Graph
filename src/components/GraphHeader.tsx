@@ -1,4 +1,4 @@
-import { ActionIcon, Burger, Group, Text, ThemeIcon, Title, Tooltip } from '@mantine/core';
+import { ActionIcon, Burger, Group, Text, ThemeIcon, Title } from '@mantine/core';
 import { IconArrowsMove, IconChartDots, IconSearch } from '@tabler/icons-react';
 
 interface GraphHeaderProps {
@@ -50,23 +50,19 @@ export function GraphHeader({
           className="touch-target"
           hiddenFrom="md"
         />
-        <Tooltip label="Open command palette (Ctrl/Cmd + K)">
-          <ActionIcon
-            className="touch-target"
-            size="lg"
-            variant="light"
-            color="grape"
-            aria-label="open command palette"
-            onClick={onOpenCommandPalette}
-          >
-            <IconSearch size={18} />
-          </ActionIcon>
-        </Tooltip>
-        <Tooltip label="Drag nodes, zoom, and inspect location details" visibleFrom="md">
-          <ActionIcon className="touch-target" size="lg" variant="light" color="indigo" aria-label="graph interaction hint">
-            <IconArrowsMove size={18} />
-          </ActionIcon>
-        </Tooltip>
+        <ActionIcon
+          className="touch-target"
+          size="lg"
+          variant="light"
+          color="grape"
+          aria-label="open command palette"
+          onClick={onOpenCommandPalette}
+        >
+          <IconSearch size={18} />
+        </ActionIcon>
+        <ActionIcon className="touch-target" size="lg" variant="light" color="indigo" aria-label="graph interaction hint">
+          <IconArrowsMove size={18} />
+        </ActionIcon>
       </Group>
     </Group>
   );

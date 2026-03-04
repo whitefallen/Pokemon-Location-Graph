@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import {
   AppShell,
   Drawer,
@@ -13,13 +13,51 @@ import { LocationFlowNode } from '../lib/graph';
 import { DatasetWithRegion } from '../types/ui';
 import { LocationDetailsPanel } from './LocationDetailsPanel';
 import { useGraphDataset } from '../hooks/useGraphDataset';
+import { useCaughtChecklist } from '../hooks/useCaughtChecklist';
 import { GraphHeader } from './GraphHeader';
 import { GraphSidebar } from './GraphSidebar';
 import { GraphViewport } from './GraphViewport';
+import { ChecklistModal } from './ChecklistModal';
 import type { PaletteItem } from './CommandPalette';
 import type { FastRenderMode } from './GraphViewport';
 
 const CommandPalette = lazy(() => import('./CommandPalette').then((module) => ({ default: module.CommandPalette })));
+const CHECKLIST_LAST_GENERATION_STORAGE_KEY = 'pokemon-location-graph:last-generation-by-dataset:v1';
+
+function readLastGenerationByDataset(): Record<string, string> {
+  if (typeof window === 'undefined') {
+    return {};
+  }
+
+  try {
+    const raw = window.localStorage.getItem(CHECKLIST_LAST_GENERATION_STORAGE_KEY);
+    if (!raw) {
+      return {};
+    }
+
+    const parsed = JSON.parse(raw) as Record<string, string>;
+    if (!parsed || typeof parsed !== 'object') {
+      return {};
+    }
+
+    return parsed;
+  } catch {
+    return {};
+  }
+}
+
+function writeLastGenerationByDataset(payload: Record<string, string>): void {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  if (Object.keys(payload).length === 0) {
+    window.localStorage.removeItem(CHECKLIST_LAST_GENERATION_STORAGE_KEY);
+    return;
+  }
+
+  window.localStorage.setItem(CHECKLIST_LAST_GENERATION_STORAGE_KEY, JSON.stringify(payload));
+}
 
 interface GraphCanvasProps {
   selectedFile: string;
@@ -33,9 +71,11 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
   const [navbarOpened, { toggle: toggleNavbar, close: closeNavbar }] = useDisclosure(false);
   const [asideOpened, { toggle: toggleAside, open: openAside, close: closeAside }] = useDisclosure(false);
   const [paletteOpened, { open: openPalette, close: closePalette }] = useDisclosure(false);
+  const [checklistOpened, { open: openChecklist, close: closeChecklist }] = useDisclosure(false);
+  const [focusedChecklistGenerationKey, setFocusedChecklistGenerationKey] = useState<string | null>(null);
+  const [lastChecklistGenerationKey, setLastChecklistGenerationKey] = useState<string | null>(null);
   const [paletteQuery, setPaletteQuery] = useState('');
   const [fastRenderMode, setFastRenderMode] = useState<FastRenderMode>('fast');
-  const [reachabilityMode, setReachabilityMode] = useState(false);
   const {
     nodes,
     edges,
@@ -52,47 +92,65 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
     datasets.map((dataset) => dataset.fileName)
   );
 
+  const { groupedChecklist, completionByGeneration, incompleteLocations, isCaught, toggleCaught, resetChecklist } = useCaughtChecklist(
+    selectedFile,
+    dataset
+  );
+
+  useEffect(() => {
+    const mapping = readLastGenerationByDataset();
+    setLastChecklistGenerationKey(mapping[selectedFile] ?? null);
+  }, [selectedFile]);
+
+  useEffect(() => {
+    const mapping = readLastGenerationByDataset();
+
+    if (!lastChecklistGenerationKey) {
+      delete mapping[selectedFile];
+      writeLastGenerationByDataset(mapping);
+      return;
+    }
+
+    mapping[selectedFile] = lastChecklistGenerationKey;
+    writeLastGenerationByDataset(mapping);
+  }, [lastChecklistGenerationKey, selectedFile]);
+
+  const checklistTotalCount = useMemo(() => {
+    return groupedChecklist.reduce((sum, generationGroup) => sum + generationGroup.locations.length, 0);
+  }, [groupedChecklist]);
+
+  const selectedLocationChecklistCompletion = useMemo(() => {
+    if (!selectedLocation) {
+      return [];
+    }
+
+    return groupedChecklist
+      .map((generationGroup) => {
+        const completion = completionByGeneration
+          .find((entry) => entry.generationKey === generationGroup.generationKey)
+          ?.locations[selectedLocation.id];
+
+        if (!completion || completion.total === 0) {
+          return null;
+        }
+
+        return {
+          generationKey: generationGroup.generationKey,
+          generationLabel: generationGroup.generationLabel,
+          caught: completion.caught,
+          total: completion.total,
+          complete: completion.complete
+        };
+      })
+      .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
+  }, [completionByGeneration, groupedChecklist, selectedLocation]);
+
   const installmentGroups = useMemo(() => {
     if (!selectedLocation) {
       return [];
     }
     return buildInstallmentGroups(selectedLocation.region, selectedLocation.encounters);
   }, [selectedLocation]);
-
-  const reachability = useMemo(() => {
-    const empty = { nodeIds: new Set<string>(), edgeIds: new Set<string>() };
-
-    if (!dataset || !selectedLocation || !reachabilityMode) {
-      return empty;
-    }
-
-    const locationsById = new Map(dataset.locations.map((location) => [location.id, location]));
-    const nodeIds = new Set<string>([selectedLocation.id]);
-    const edgeIds = new Set<string>();
-    const queue: string[] = [selectedLocation.id];
-
-    while (queue.length > 0) {
-      const currentId = queue.shift();
-      if (!currentId) {
-        continue;
-      }
-
-      const currentLocation = locationsById.get(currentId);
-      if (!currentLocation) {
-        continue;
-      }
-
-      for (const connection of currentLocation.connections) {
-        edgeIds.add(`edge-${currentId}::${connection.to}`);
-        if (!nodeIds.has(connection.to)) {
-          nodeIds.add(connection.to);
-          queue.push(connection.to);
-        }
-      }
-    }
-
-    return { nodeIds, edgeIds };
-  }, [dataset, selectedLocation, reachabilityMode]);
 
   const clearSelection = useCallback(() => {
     clearSelectedLocation();
@@ -202,6 +260,35 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
     closePalette();
   }, [closePalette]);
 
+  const openChecklistForGeneration = useCallback(
+    (generationKey: string) => {
+      setFocusedChecklistGenerationKey(generationKey);
+      setLastChecklistGenerationKey(generationKey);
+      openChecklist();
+    },
+    [openChecklist]
+  );
+
+  const openChecklistFromSidebar = useCallback(() => {
+    setFocusedChecklistGenerationKey(lastChecklistGenerationKey);
+    openChecklist();
+  }, [lastChecklistGenerationKey, openChecklist]);
+
+  const rememberChecklistGeneration = useCallback((generationKey: string) => {
+    setLastChecklistGenerationKey(generationKey);
+  }, []);
+
+  const handleResetChecklist = useCallback(() => {
+    resetChecklist();
+    setLastChecklistGenerationKey(null);
+    writeLastGenerationByDataset({});
+  }, [resetChecklist]);
+
+  const closeChecklistAndClearFocus = useCallback(() => {
+    setFocusedChecklistGenerationKey(null);
+    closeChecklist();
+  }, [closeChecklist]);
+
   return (
     <AppShell
       padding="md"
@@ -232,10 +319,9 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
           generatedAt={dataset?.generatedAt}
           fastRenderMode={fastRenderMode}
           onFastRenderModeChange={setFastRenderMode}
-          reachabilityMode={reachabilityMode}
-          onReachabilityModeChange={setReachabilityMode}
-          hasSelectedLocation={Boolean(selectedLocation)}
-          reachableNodesCount={Math.max(0, reachability.nodeIds.size - 1)}
+          incompleteChecklistCount={incompleteLocations.length}
+          checklistTotalCount={checklistTotalCount}
+          onOpenChecklist={openChecklistFromSidebar}
         />
       </AppShell.Navbar>
 
@@ -249,9 +335,6 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
           error={error}
           onSelectLocation={handleSelectLocation}
           renderMode={fastRenderMode}
-          reachabilityMode={reachabilityMode}
-          reachableNodeIds={reachability.nodeIds}
-          reachableEdgeIds={reachability.edgeIds}
         />
       </AppShell.Main>
 
@@ -260,6 +343,8 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
           <LocationDetailsPanel
             selectedLocation={selectedLocation}
             installmentGroups={installmentGroups}
+            checklistCompletion={selectedLocationChecklistCompletion}
+            onOpenChecklistGeneration={openChecklistForGeneration}
             onClear={clearSelection}
             encounterScrollHeight={280}
             connectionsScrollHeight={180}
@@ -280,11 +365,25 @@ export function GraphCanvas({ selectedFile, datasets, onDatasetChange }: GraphCa
         <LocationDetailsPanel
           selectedLocation={selectedLocation}
           installmentGroups={installmentGroups}
+          checklistCompletion={selectedLocationChecklistCompletion}
+          onOpenChecklistGeneration={openChecklistForGeneration}
           onClear={clearSelection}
           encounterScrollHeight={220}
           connectionsScrollHeight={150}
         />
       </Drawer>
+
+      <ChecklistModal
+        opened={checklistOpened}
+        onClose={closeChecklistAndClearFocus}
+        groupedChecklist={groupedChecklist}
+        completionByGeneration={completionByGeneration}
+        focusedGenerationKey={focusedChecklistGenerationKey}
+        onGenerationFocused={rememberChecklistGeneration}
+        isCaught={isCaught}
+        onToggleCaught={toggleCaught}
+        onResetChecklist={handleResetChecklist}
+      />
 
       {paletteOpened && (
         <Suspense

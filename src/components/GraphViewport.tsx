@@ -31,9 +31,6 @@ interface GraphViewportProps {
   error: string | null;
   onSelectLocation: (locationId: string) => void;
   renderMode: FastRenderMode;
-  reachabilityMode: boolean;
-  reachableNodeIds: Set<string>;
-  reachableEdgeIds: Set<string>;
 }
 
 export function GraphViewport({
@@ -44,32 +41,14 @@ export function GraphViewport({
   loading,
   error,
   onSelectLocation,
-  renderMode,
-  reachabilityMode,
-  reachableNodeIds,
-  reachableEdgeIds
+  renderMode
 }: GraphViewportProps) {
+  const isFirefox = typeof navigator !== 'undefined' && /firefox/i.test(navigator.userAgent);
   const isPerformanceLite =
-    renderMode === 'fast' || (renderMode === 'auto' && (nodes.length >= 70 || edges.length >= 120));
-
-  const nodesForRender = useMemo(() => {
-    if (!reachabilityMode || reachableNodeIds.size === 0) {
-      return nodes;
-    }
-
-    return nodes.map((node) => {
-      const existingClassName = node.className ? `${node.className} ` : '';
-      const reachabilityClassName = reachableNodeIds.has(node.id) ? 'node-reachable' : 'node-dimmed';
-      return {
-        ...node,
-        className: `${existingClassName}${reachabilityClassName}`
-      };
-    });
-  }, [nodes, reachabilityMode, reachableNodeIds]);
+    renderMode === 'fast' ||
+    (renderMode === 'auto' && (isFirefox ? nodes.length >= 45 || edges.length >= 80 : nodes.length >= 70 || edges.length >= 120));
 
   const edgesForRender = useMemo(() => {
-    const shouldApplyReachability = reachabilityMode && reachableEdgeIds.size > 0;
-
     let changed = false;
     const optimizedEdges = edges.map((edge) => {
       let updatedEdge = edge;
@@ -84,21 +63,11 @@ export function GraphViewport({
         changed = true;
       }
 
-      if (shouldApplyReachability) {
-        const existingClassName = updatedEdge.className ? `${updatedEdge.className} ` : '';
-        const reachabilityClassName = reachableEdgeIds.has(updatedEdge.id) ? 'edge-reachable' : 'edge-dimmed';
-        const nextClassName = `${existingClassName}${reachabilityClassName}`;
-        if (updatedEdge.className !== nextClassName) {
-          updatedEdge = { ...updatedEdge, className: nextClassName };
-          changed = true;
-        }
-      }
-
       return updatedEdge;
     });
 
     return changed ? optimizedEdges : edges;
-  }, [edges, isPerformanceLite, reachabilityMode, reachableEdgeIds]);
+  }, [edges, isPerformanceLite]);
 
   return (
     <GraphSurface h="100%">
@@ -116,8 +85,8 @@ export function GraphViewport({
       )}
       <div className="graph-flow">
         <ReactFlow<LocationFlowNode, Edge>
-          className={`spiced-flow ${isPerformanceLite ? 'graph-lite' : ''} ${reachabilityMode ? 'reachability-mode' : ''}`}
-          nodes={nodesForRender}
+          className={`spiced-flow ${isPerformanceLite ? 'graph-lite' : ''}`}
+          nodes={nodes}
           edges={edgesForRender}
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}

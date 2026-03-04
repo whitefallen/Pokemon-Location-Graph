@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Badge, Group, Stack, Text, ThemeIcon, Tooltip } from '@mantine/core';
+import { Badge, Group, Stack, Text, ThemeIcon } from '@mantine/core';
 import { IconMapPin, IconPokeball } from '@tabler/icons-react';
 import { Handle, Position } from '@xyflow/react';
 
@@ -25,11 +25,9 @@ export const LocationNode = memo(function LocationNode({ data }: LocationNodePro
             <ThemeIcon size="sm" variant="light" color="violet">
               <IconMapPin size={14} />
             </ThemeIcon>
-            <Tooltip label={data.name} openDelay={250}>
-              <Text fw={700} size="sm" className="location-node-title" lineClamp={1}>
-                {data.name}
-              </Text>
-            </Tooltip>
+            <Text fw={700} size="sm" className="location-node-title" lineClamp={1}>
+              {data.name}
+            </Text>
           </Group>
           <Badge variant="dot" color="indigo" tt="capitalize">
             {data.region}
