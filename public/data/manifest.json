@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "fileName": "pokewiki-kanto-location-model-encounters.json",
+      "label": "kanto",
+      "locations": 72,
+      "encounters": 1287
+    },
+    {
+      "fileName": "pokewiki-einall-location-model-encounters.json",
+      "label": "einall",
+      "locations": 14,
+      "encounters": 209
+    },
+    {
+      "fileName": "pokewiki-kalos-location-model-encounters.json",
+      "label": "kalos",
+      "locations": 72,
+      "encounters": 339
+    },
+    {
+      "fileName": "pokewiki-johto-location-model-encounters.json",
+      "label": "johto",
+      "locations": 123,
+      "encounters": 2497
+    },
+    {
+      "fileName": "pokewiki-hoenn-location-model-encounters.json",
+      "label": "hoenn",
+      "locations": 88,
+      "encounters": 1174
+    },
+    {
+      "fileName": "pokewiki-sinnoh-location-model-encounters.json",
+      "label": "sinnoh",
+      "locations": 88,
+      "encounters": 947
+    }
+  ]
+}

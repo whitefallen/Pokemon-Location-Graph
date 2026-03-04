@@ -1,0 +1,1674 @@
+{
+  "source": "pokewiki-imagemap-location-model-with-encounters",
+  "generatedAt": "2026-03-04T16:10:02.559Z",
+  "locations": [
+    {
+      "id": "avenitia",
+      "name": "Avenitia",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "route_1",
+          "dir": "north"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "ewigenwald",
+      "name": "Ewigenwald",
+      "region": "einall",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "gavina",
+      "name": "Gavina",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "route_1",
+          "dir": "south"
+        },
+        {
+          "to": "route_2",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "grundwassersenke",
+      "name": "Grundwassersenke",
+      "region": "einall",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "orion_city",
+      "name": "Orion City",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "route_3",
+          "dir": "north"
+        },
+        {
+          "to": "route_2",
+          "dir": "south"
+        },
+        {
+          "to": "traumbrache",
+          "dir": "east"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "p2_labor",
+      "name": "P2-Labor",
+      "region": "einall",
+      "connections": [],
+      "encounters": [
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "klinklang",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "magnezone",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "stoutland",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "finneon",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "horsea",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "kingdra",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "lumineon",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "qwilfish",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seadra",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "frillish-male",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "alomomola",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "jellicent-male",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "herdier",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "klang",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "magneton",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "scrafty",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "weezing",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "stoutland",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "finneon",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "horsea",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "kingdra",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "lumineon",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "qwilfish",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seadra",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "frillish-male",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "alomomola",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "jellicent-male",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "herdier",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "klink",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "scraggy",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        }
+      ]
+    },
+    {
+      "id": "pension",
+      "name": "Pension",
+      "region": "einall",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "route_1",
+      "name": "Route 1 (Einall)",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "gavina",
+          "dir": "north"
+        },
+        {
+          "to": "avenitia",
+          "dir": "south"
+        },
+        {
+          "to": "route_17",
+          "dir": "west"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "dark-grass",
+          "pokemon": "herdier",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "jigglypuff",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "scrafty",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "dunsparce",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "stoutland",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "wigglytuff",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "feebas",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "feebas",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "milotic",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "herdier",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "jigglypuff",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "herdier",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "scraggy",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "watchog",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "feebas",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "feebas",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "milotic",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "lillipup",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "patrat",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        }
+      ]
+    },
+    {
+      "id": "route_17",
+      "name": "Route 17 (Einall)",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "route_1",
+          "dir": "east"
+        },
+        {
+          "to": "route_18",
+          "dir": "west"
+        },
+        {
+          "to": "p2_labor",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "super-rod",
+          "pokemon": "finneon",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "horsea",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "horsea",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "kingdra",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "lumineon",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seadra",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "frillish-male",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "alomomola",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "jellicent-male",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "finneon",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "horsea",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "kingdra",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "lumineon",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "qwilfish",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seadra",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "frillish-male",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "alomomola",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "jellicent-male",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        }
+      ]
+    },
+    {
+      "id": "route_18",
+      "name": "Route 18 (Einall)",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "route_17",
+          "dir": "east"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "dark-grass",
+          "pokemon": "carnivine",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "crustle",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "sawk",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "scrafty",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "throh",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "tropius",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "dunsparce",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "sawk",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "throh",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "corsola",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "finneon",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "horsea",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "horsea",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "kingdra",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "lumineon",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seadra",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "frillish-male",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "alomomola",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "jellicent-male",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "carnivine",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "crustle",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "sawk",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "scrafty",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "throh",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "tropius",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "crustle",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "sawk",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "scraggy",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "throh",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "watchog",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "gift-egg",
+          "pokemon": "larvesta",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "sawk",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "throh",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "chinchou",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "finneon",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "horsea",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "kingdra",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "lumineon",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "qwilfish",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seadra",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "frillish-male",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "alomomola",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "jellicent-male",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "dwebble",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "sawk",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "scraggy",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "throh",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        }
+      ]
+    },
+    {
+      "id": "route_2",
+      "name": "Route 2 (Einall)",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "orion_city",
+          "dir": "north"
+        },
+        {
+          "to": "gavina",
+          "dir": "south"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "dunsparce",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "lickilicky",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "stoutland",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "wigglytuff",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "herdier",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "jigglypuff",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "lickitung",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "liepard",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "lillipup",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "patrat",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "purrloin",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        }
+      ]
+    },
+    {
+      "id": "route_3",
+      "name": "Route 3 (Einall)",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "grundwassersenke",
+          "dir": "west"
+        },
+        {
+          "to": "orion_city",
+          "dir": "southeast"
+        },
+        {
+          "to": "septerna_city",
+          "dir": "southwest"
+        },
+        {
+          "to": "pension",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "dark-grass",
+          "pokemon": "herdier",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "purrloin",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "tranquill",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "yanma",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "zebstrika",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "stoutland",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "unfezant",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "yanmega",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "goldeen",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "goldeen",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seaking",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "corphish",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "corphish",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "crawdaunt",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "herdier",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "purrloin",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "tranquill",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "yanma",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "zebstrika",
+          "versionGroup": "black-2-white-2",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "blitzle",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "lillipup",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "patrat",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "pidove",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "dark-grass",
+          "pokemon": "purrloin",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "grass-spots",
+          "pokemon": "audino",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "goldeen",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "goldeen",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "super-rod-spots",
+          "pokemon": "seaking",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "surf-spots",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "blitzle",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "lillipup",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "patrat",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pidove",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        },
+        {
+          "method": "walk",
+          "pokemon": "purrloin",
+          "versionGroup": "black-white",
+          "generationId": 5,
+          "generationName": "Generation V"
+        }
+      ]
+    },
+    {
+      "id": "septerna_city",
+      "name": "Septerna City",
+      "region": "einall",
+      "connections": [
+        {
+          "to": "route_3",
+          "dir": "east"
+        },
+        {
+          "to": "ewigenwald",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "traumbrache",
+      "name": "Traumbrache",
+      "region": "einall",
+      "connections": [],
+      "encounters": []
+    }
+  ],
+  "mergeMeta": {
+    "versionGroups": [
+      "black-white",
+      "black-2-white-2"
+    ],
+    "versionGroup": "black-white,black-2-white-2",
+    "mergedAt": "2026-03-04T16:10:02.559Z"
+  }
+}

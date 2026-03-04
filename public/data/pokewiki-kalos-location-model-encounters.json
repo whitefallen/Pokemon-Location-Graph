@@ -1,0 +1,3419 @@
+{
+  "source": "pokewiki-imagemap-location-model-with-encounters",
+  "generatedAt": "2026-03-04T16:10:02.664Z",
+  "locations": [
+    {
+      "id": "aquarellia",
+      "name": "Aquarellia",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_2",
+          "dir": "north"
+        },
+        {
+          "to": "route_1",
+          "dir": "south"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "azurbucht",
+      "name": "Azurbucht",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_12",
+          "dir": "south"
+        },
+        {
+          "to": "meerestitanenhohle",
+          "dir": "contains"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "bahnhof_von_illumina",
+      "name": "Bahnhof von Illumina",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "bahnhofsplatz_illumina_sud",
+      "name": "Bahnhofsplatz Illumina Süd",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "boulevard_rouge",
+      "name": "Boulevard Rouge",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "connie",
+      "name": "Connie",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "cyan_bezirk_8",
+      "name": "Cyan-Bezirk 8",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "escissia",
+      "name": "Escissia",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_1",
+          "dir": "north"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "fluxia_city",
+      "name": "Fluxia City",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_18",
+          "dir": "south"
+        },
+        {
+          "to": "route_17",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "fractalia_city",
+      "name": "Fractalia City",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_20",
+          "dir": "south"
+        },
+        {
+          "to": "route_19",
+          "dir": "east"
+        },
+        {
+          "to": "route_21",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "frescora",
+      "name": "Frescora",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "frosthohle",
+          "dir": "north"
+        },
+        {
+          "to": "route_17",
+          "dir": "east"
+        },
+        {
+          "to": "route_15",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "friseursalon",
+      "name": "Friseursalon",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "frosthohle",
+      "name": "Frosthöhle",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "fruhlingsallee",
+      "name": "Frühlingsallee",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "geolinkhohle",
+      "name": "Geolinkhöhle",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "grand_hotel_pique_faine",
+      "name": "Grand Hôtel Pique Faîne",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "herbstallee",
+      "name": "Herbstallee",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "hotelruine",
+      "name": "Hotelruine",
+      "region": "kalos",
+      "connections": [],
+      "encounters": [
+        {
+          "method": "walk",
+          "pokemon": "electrode",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "klefki",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "litwick",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "magneton",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pawniard",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "illumina_city",
+      "name": "Illumina City",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_14",
+          "dir": "north"
+        },
+        {
+          "to": "route_16",
+          "dir": "east"
+        },
+        {
+          "to": "route_13",
+          "dir": "west"
+        },
+        {
+          "to": "route_4",
+          "dir": "southeast"
+        },
+        {
+          "to": "route_5",
+          "dir": "southwest"
+        },
+        {
+          "to": "fruhlingsallee",
+          "dir": "contains"
+        },
+        {
+          "to": "herbstallee",
+          "dir": "contains"
+        },
+        {
+          "to": "nordring",
+          "dir": "contains"
+        },
+        {
+          "to": "place_cyan",
+          "dir": "contains"
+        },
+        {
+          "to": "sommerallee",
+          "dir": "contains"
+        },
+        {
+          "to": "sudring",
+          "dir": "contains"
+        },
+        {
+          "to": "winterallee",
+          "dir": "contains"
+        },
+        {
+          "to": "zentral_plaza",
+          "dir": "contains"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "illumina_kunstmuseum",
+      "name": "Illumina-Kunstmuseum",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "jaune_bezirk_7",
+      "name": "Jaune-Bezirk 7",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "kalos_kraftwerk",
+      "name": "Kalos-Kraftwerk",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "kammer_der_leere",
+      "name": "Kammer der Leere",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "kampfschloss",
+      "name": "Kampfschloss",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "magnum_opus_palast",
+      "name": "Magnum-Opus-Palast",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_6",
+          "dir": "south"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "meerestitanenhohle",
+      "name": "Meerestitanenhöhle",
+      "region": "kalos",
+      "connections": [],
+      "encounters": [
+        {
+          "method": "only-one",
+          "pokemon": "articuno",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "only-one",
+          "pokemon": "moltres",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "only-one",
+          "pokemon": "zapdos",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "mosaia",
+      "name": "Mosaia",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_18",
+          "dir": "north"
+        },
+        {
+          "to": "route_19",
+          "dir": "south"
+        },
+        {
+          "to": "pokemon_supermarkt",
+          "dir": "contains"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "nordring",
+      "name": "Nordring",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_14",
+          "dir": "north"
+        },
+        {
+          "to": "place_rouge",
+          "dir": "south"
+        },
+        {
+          "to": "route_16",
+          "dir": "east"
+        },
+        {
+          "to": "boulevard_rouge",
+          "dir": "west"
+        },
+        {
+          "to": "rose_bezirk_9",
+          "dir": "southeast"
+        },
+        {
+          "to": "jaune_bezirk_7",
+          "dir": "southwest"
+        },
+        {
+          "to": "bahnhof_von_illumina",
+          "dir": "contains"
+        },
+        {
+          "to": "grand_hotel_pique_faine",
+          "dir": "contains"
+        },
+        {
+          "to": "illumina_kunstmuseum",
+          "dir": "contains"
+        },
+        {
+          "to": "pokemon_labor_kalos",
+          "dir": "contains"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "nouvaria_city",
+      "name": "Nouvaria City",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_4",
+          "dir": "north"
+        },
+        {
+          "to": "route_3",
+          "dir": "south"
+        },
+        {
+          "to": "route_22",
+          "dir": "east"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "nouvaria_wald",
+      "name": "Nouvaria-Wald",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_3",
+          "dir": "north"
+        },
+        {
+          "to": "route_2",
+          "dir": "south"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "omega_hohle",
+      "name": "Omega-Höhle",
+      "region": "kalos",
+      "connections": [],
+      "encounters": [
+        {
+          "method": "only-one",
+          "pokemon": "mewtwo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "pension",
+      "name": "Pension",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "place_cyan",
+      "name": "Place Cyan",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "place_rouge",
+      "name": "Place Rouge",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "pokeball_fabrik",
+      "name": "Pokéball-Fabrik",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "pokemon_liga_kalos",
+      "name": "Pokémon Liga (Kalos)",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "pokemon_arena_von_yantara_city",
+      "name": "Pokémon-Arena von Yantara City",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "pokemon_dorf",
+      "name": "Pokémon-Dorf",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_20",
+          "dir": "east"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "pokemon_labor_kalos",
+      "name": "Pokémon-Labor (Kalos)",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "pokemon_supermarkt",
+      "name": "Pokémon-Supermarkt",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "restaurant_solala",
+      "name": "Restaurant Solala",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "romantia_city",
+      "name": "Romantia City",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "pokeball_fabrik",
+          "dir": "north"
+        },
+        {
+          "to": "route_14",
+          "dir": "south"
+        },
+        {
+          "to": "route_15",
+          "dir": "east"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "rose_bezirk_9",
+      "name": "Rose-Bezirk 9",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "route_1",
+      "name": "Route 1 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "aquarellia",
+          "dir": "north"
+        },
+        {
+          "to": "escissia",
+          "dir": "south"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "route_12",
+      "name": "Route 12 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "azurbucht",
+          "dir": "north"
+        },
+        {
+          "to": "tempera_city",
+          "dir": "east"
+        },
+        {
+          "to": "yantara_city",
+          "dir": "west"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "gift",
+          "pokemon": "lapras",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "clamperl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "remoraid",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "mareep",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "miltank",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "tauros",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "wingull",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "luvdisc",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rock-smash",
+          "pokemon": "binacle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rock-smash",
+          "pokemon": "dwebble",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "corsola",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "gorebyss",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "huntail",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "octillery",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "lapras",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "mantyke",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "tentacool",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "chatot",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "exeggcute",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "heracross",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "miltank",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pachirisu",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pinsir",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "slowpoke",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "tauros",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "chatot",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "exeggcute",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "heracross",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "miltank",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "pachirisu",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "pinsir",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "slowpoke",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "tauros",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_13",
+      "name": "Route 13 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "tempera_city",
+          "dir": "north"
+        },
+        {
+          "to": "illumina_city",
+          "dir": "south"
+        },
+        {
+          "to": "kalos_kraftwerk",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "rock-smash",
+          "pokemon": "graveler",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rock-smash",
+          "pokemon": "slugma",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "dugtrio",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "gible",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "trapinch",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_14",
+      "name": "Route 14 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "romantia_city",
+          "dir": "north"
+        },
+        {
+          "to": "illumina_city",
+          "dir": "south"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "good-rod",
+          "pokemon": "barboach",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "bellsprout",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "ekans",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "skorupi",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "poliwag",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "carnivine",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "goomy",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "haunter",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "karrablast",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "quagsire",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "shelmet",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "stunfisk",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "whiscash",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "goomy",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "quagsire",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "stunfisk",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "carnivine",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "goomy",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "haunter",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "karrablast",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "quagsire",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "shelmet",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "skorupi",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "weepinbell",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_15",
+      "name": "Route 15 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_16",
+          "dir": "south"
+        },
+        {
+          "to": "frescora",
+          "dir": "east"
+        },
+        {
+          "to": "romantia_city",
+          "dir": "west"
+        },
+        {
+          "to": "hotelruine",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "good-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "foongus",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "klefki",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "murkrow",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "poliwag",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "foongus",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "klefki",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "liepard",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "mightyena",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "pawniard",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "skorupi",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "watchog",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "floatzel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "lombre",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "foongus",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "klefki",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "liepard",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "mightyena",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pawniard",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "skorupi",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "watchog",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_16",
+      "name": "Route 16 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_15",
+          "dir": "north"
+        },
+        {
+          "to": "illumina_city",
+          "dir": "west"
+        },
+        {
+          "to": "hotelruine",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "good-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "foongus",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "klefki",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "murkrow",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "poliwag",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "foongus",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "klefki",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "phantump",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "pumpkaboo-average",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "pumpkaboo-large",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "pumpkaboo-small",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "pumpkaboo-super",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-blue-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "floatzel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "lombre",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "floatzel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "foongus",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "klefki",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "phantump",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "skorupi",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "weepinbell",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_17",
+      "name": "Route 17 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "fluxia_city",
+          "dir": "east"
+        },
+        {
+          "to": "frescora",
+          "dir": "west"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "rough-terrain",
+          "pokemon": "abomasnow",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "delibird",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "sneasel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "snover",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_18",
+      "name": "Route 18 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "fluxia_city",
+          "dir": "north"
+        },
+        {
+          "to": "mosaia",
+          "dir": "south"
+        },
+        {
+          "to": "omega_hohle",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "horde",
+          "pokemon": "durant",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "geodude",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "heatmor",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "durant",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "graveler",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "gurdurr",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "heatmor",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "lairon",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "pupitar",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "sandslash",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "torkoal",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rock-smash",
+          "pokemon": "graveler",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rock-smash",
+          "pokemon": "shuckle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "durant",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "graveler",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "gurdurr",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "heatmor",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "lairon",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pupitar",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "sandslash",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "torkoal",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_19",
+      "name": "Route 19 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "mosaia",
+          "dir": "north"
+        },
+        {
+          "to": "fractalia_city",
+          "dir": "west"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "good-rod",
+          "pokemon": "barboach",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "arbok",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "gligar",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "weepinbell",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "poliwag",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "carnivine",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "drapion",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "haunter",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "karrablast",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "quagsire",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "shelmet",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "sliggoo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "weepinbell",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "carnivine",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "haunter",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "karrablast",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "quagsire",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "shelmet",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "sliggoo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "stunfisk",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "politoed",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "whiscash",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "quagsire",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "sliggoo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "stunfisk",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "carnivine",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "drapion",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "haunter",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "karrablast",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "quagsire",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "shelmet",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "sliggoo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "weepinbell",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_2",
+      "name": "Route 2 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "nouvaria_wald",
+          "dir": "north"
+        },
+        {
+          "to": "aquarellia",
+          "dir": "south"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "walk",
+          "pokemon": "bunnelby",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "caterpie",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "fletchling",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pidgey",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "scatterbug",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "weedle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "zigzagoon",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_20",
+      "name": "Route 20 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "fractalia_city",
+          "dir": "north"
+        },
+        {
+          "to": "pokemon_dorf",
+          "dir": "west"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "horde",
+          "pokemon": "foongus",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "sudowoodo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "trevenant",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "amoonguss",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "gothorita",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "jigglypuff",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "noctowl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "trevenant",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "zoroark",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "amoonguss",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "gothorita",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "jigglypuff",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "noctowl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "trevenant",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "zoroark",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_21",
+      "name": "Route 21 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "fractalia_city",
+          "dir": "east"
+        },
+        {
+          "to": "siegesstra_e_kalos",
+          "dir": "west"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "good-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "dratini",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "scyther",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "spinda",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "swablu",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "poliwag",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "altaria",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "floatzel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "scyther",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "spinda",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "ursaring",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "altaria",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "floatzel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "scyther",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "spinda",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "ursaring",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "basculin-red-striped",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "dragonair",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "poliwhirl",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "floatzel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "lombre",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_22",
+      "name": "Route 22 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "siegesstra_e_kalos",
+          "dir": "east"
+        },
+        {
+          "to": "nouvaria_city",
+          "dir": "west"
+        },
+        {
+          "to": "kammer_der_leere",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "good-rod",
+          "pokemon": "carvanha",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "goldeen",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "magikarp",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "gyarados",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "seaking",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "sharpedo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "azumarill",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "psyduck",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "azurill",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "bidoof",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "bunnelby",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "dunsparce",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "farfetchd",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "litleo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "psyduck",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "riolu",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "azumarill",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "bibarel",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "diggersby",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "dunsparce",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "farfetchd",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "litleo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "psyduck",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "riolu",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_3",
+      "name": "Route 3 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "nouvaria_city",
+          "dir": "north"
+        },
+        {
+          "to": "nouvaria_wald",
+          "dir": "south"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "good-rod",
+          "pokemon": "corphish",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "good-rod",
+          "pokemon": "goldeen",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "old-rod",
+          "pokemon": "magikarp",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "crawdaunt",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "gyarados",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "super-rod",
+          "pokemon": "seaking",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "marill",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "surf",
+          "pokemon": "masquerain",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "azurill",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "bidoof",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "bunnelby",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "burmy",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "dunsparce",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "fletchling",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pidgey",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pikachu",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_4",
+      "name": "Route 4 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "illumina_city",
+          "dir": "north"
+        },
+        {
+          "to": "nouvaria_city",
+          "dir": "south"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "red-flowers",
+          "pokemon": "budew",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "combee",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "flabebe",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "ledyba",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "ralts",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "red-flowers",
+          "pokemon": "skitty",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "budew",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "combee",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "flabebe",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "ledyba",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "ralts",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "skitty",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_5",
+      "name": "Route 5 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "illumina_city",
+          "dir": "east"
+        },
+        {
+          "to": "vanitea",
+          "dir": "west"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "horde",
+          "pokemon": "gulpin",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "minun",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "plusle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "scraggy",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "abra",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "bunnelby",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "doduo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "furfrou",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "gulpin",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "minun",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "pancham",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "plusle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "skiddo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "abra",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "bunnelby",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "doduo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "furfrou",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "gulpin",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "minun",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "pancham",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "plusle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "skiddo",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_6",
+      "name": "Route 6 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "magnum_opus_palast",
+          "dir": "north"
+        },
+        {
+          "to": "route_7",
+          "dir": "south"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "rough-terrain",
+          "pokemon": "espurr",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "honedge",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "kecleon",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "nincada",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "oddish",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "rough-terrain",
+          "pokemon": "sentret",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "route_7",
+      "name": "Route 7 (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_6",
+          "dir": "north"
+        },
+        {
+          "to": "vanitea",
+          "dir": "east"
+        },
+        {
+          "to": "geolinkhohle",
+          "dir": "west"
+        },
+        {
+          "to": "kampfschloss",
+          "dir": "contains"
+        },
+        {
+          "to": "pension",
+          "dir": "contains"
+        }
+      ],
+      "encounters": [
+        {
+          "method": "horde",
+          "pokemon": "hoppip",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "psyduck",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "horde",
+          "pokemon": "roselia",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "only-one",
+          "pokemon": "snorlax",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "croagunk",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "ducklett",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "flabebe",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "illumise",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "roselia",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "smeargle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "spritzee",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "swirlix",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "purple-flowers",
+          "pokemon": "volbeat",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "croagunk",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "ducklett",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "flabebe",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "illumise",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "roselia",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "smeargle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "spritzee",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "swirlix",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "walk",
+          "pokemon": "volbeat",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "croagunk",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "ducklett",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "flabebe",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "illumise",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "roselia",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "smeargle",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "spritzee",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "swirlix",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        },
+        {
+          "method": "yellow-flowers",
+          "pokemon": "volbeat",
+          "versionGroup": "x-y",
+          "generationId": 6,
+          "generationName": "Generation VI"
+        }
+      ]
+    },
+    {
+      "id": "siegesstra_e_kalos",
+      "name": "Siegesstraße (Kalos)",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "pokemon_liga_kalos",
+          "dir": "north"
+        },
+        {
+          "to": "route_21",
+          "dir": "east"
+        },
+        {
+          "to": "route_22",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "sommerallee",
+      "name": "Sommerallee",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "spiegelhohle",
+      "name": "Spiegelhöhle",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "sudring",
+      "name": "Südring",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "fruhlingsallee",
+          "dir": "north"
+        },
+        {
+          "to": "sommerallee",
+          "dir": "east"
+        },
+        {
+          "to": "bahnhofsplatz_illumina_sud",
+          "dir": "west"
+        },
+        {
+          "to": "cyan_bezirk_8",
+          "dir": "northeast"
+        },
+        {
+          "to": "verte_bezirk_7",
+          "dir": "northwest"
+        },
+        {
+          "to": "route_4",
+          "dir": "southeast"
+        },
+        {
+          "to": "route_5",
+          "dir": "southwest"
+        },
+        {
+          "to": "friseursalon",
+          "dir": "contains"
+        },
+        {
+          "to": "pokemon_labor_kalos",
+          "dir": "contains"
+        },
+        {
+          "to": "restaurant_solala",
+          "dir": "contains"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "tempera_city",
+      "name": "Tempera City",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_13",
+          "dir": "south"
+        },
+        {
+          "to": "route_12",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "turm_der_erkenntnis",
+      "name": "Turm der Erkenntnis",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "vanitea",
+      "name": "Vanitéa",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "route_5",
+          "dir": "east"
+        },
+        {
+          "to": "route_7",
+          "dir": "west"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "verte_bezirk_7",
+      "name": "Verte-Bezirk 7",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "winterallee",
+      "name": "Winterallee",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    },
+    {
+      "id": "yantara_city",
+      "name": "Yantara City",
+      "region": "kalos",
+      "connections": [
+        {
+          "to": "spiegelhohle",
+          "dir": "south"
+        },
+        {
+          "to": "route_12",
+          "dir": "east"
+        },
+        {
+          "to": "connie",
+          "dir": "contains"
+        },
+        {
+          "to": "pokemon_arena_von_yantara_city",
+          "dir": "contains"
+        },
+        {
+          "to": "pokemon_supermarkt",
+          "dir": "contains"
+        },
+        {
+          "to": "turm_der_erkenntnis",
+          "dir": "contains"
+        }
+      ],
+      "encounters": []
+    },
+    {
+      "id": "zentral_plaza",
+      "name": "Zentral-Plaza",
+      "region": "kalos",
+      "connections": [],
+      "encounters": []
+    }
+  ],
+  "mergeMeta": {
+    "versionGroups": [
+      "x-y"
+    ],
+    "versionGroup": "x-y",
+    "mergedAt": "2026-03-04T16:10:02.664Z"
+  }
+}
