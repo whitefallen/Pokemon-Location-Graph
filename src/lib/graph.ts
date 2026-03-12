@@ -122,6 +122,28 @@ function findNearestFreeSlot(preferred: Slot, occupiedSlots: Set<string>): Slot 
   return fallback;
 }
 
+function findFreeSlotAlongDirection(origin: Slot, vector: Slot, occupiedSlots: Set<string>): Slot {
+  for (let distance = 1; distance <= 12; distance += 1) {
+    const candidate = {
+      x: origin.x + vector.x * distance,
+      y: origin.y + vector.y * distance
+    };
+    const key = slotKey(candidate);
+    if (!occupiedSlots.has(key)) {
+      occupiedSlots.add(key);
+      return candidate;
+    }
+  }
+
+  return findNearestFreeSlot(
+    {
+      x: origin.x + vector.x,
+      y: origin.y + vector.y
+    },
+    occupiedSlots
+  );
+}
+
 function buildDirectionalPositions(dataset: LocationDataset, startLocationId: string): Map<string, Point> {
   const positions = new Map<string, Point>();
   const occupiedSlots = new Set<string>();
@@ -164,10 +186,7 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
             y: currentSlot.y + baseOffset.y * ring
           };
         } else if (vector) {
-          candidateSlot = {
-            x: currentSlot.x + vector.x,
-            y: currentSlot.y + vector.y
-          };
+          candidateSlot = findFreeSlotAlongDirection(currentSlot, vector, occupiedSlots);
         } else {
           fallbackIndex += 1;
           candidateSlot = {
@@ -176,7 +195,10 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
           };
         }
 
-        const freeSlot = findNearestFreeSlot(candidateSlot, occupiedSlots);
+        const freeSlot =
+          vector && direction !== 'contains'
+            ? candidateSlot
+            : findNearestFreeSlot(candidateSlot, occupiedSlots);
         slotByLocationId.set(target.id, freeSlot);
         queue.push(target.id);
       }
