@@ -36,6 +36,7 @@ const DIRECTION_PRIORITY: Record<string, number> = {
 
 const SLOT_STEP_X = 360;
 const SLOT_STEP_Y = 240;
+const MAX_SLOT_SEARCH_RADIUS = 12;
 const CONTAINS_OFFSETS: Slot[] = [
   { x: 1, y: 0 },
   { x: -1, y: 0 },
@@ -93,7 +94,7 @@ function findNearestFreeSlot(preferred: Slot, occupiedSlots: Set<string>): Slot 
     return preferred;
   }
 
-  for (let radius = 1; radius <= 12; radius += 1) {
+  for (let radius = 1; radius <= MAX_SLOT_SEARCH_RADIUS; radius += 1) {
     for (let dy = -radius; dy <= radius; dy += 1) {
       for (let dx = -radius; dx <= radius; dx += 1) {
         if (Math.max(Math.abs(dx), Math.abs(dy)) !== radius) {
@@ -123,7 +124,7 @@ function findNearestFreeSlot(preferred: Slot, occupiedSlots: Set<string>): Slot 
 }
 
 function findFreeSlotAlongDirection(origin: Slot, vector: Slot, occupiedSlots: Set<string>): Slot {
-  for (let distance = 1; distance <= 12; distance += 1) {
+  for (let distance = 1; distance <= MAX_SLOT_SEARCH_RADIUS; distance += 1) {
     const candidate = {
       x: origin.x + vector.x * distance,
       y: origin.y + vector.y * distance
@@ -176,29 +177,27 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
         const direction = normalizeDirection(connection.dir);
         const vector = DIRECTION_VECTORS[direction];
 
-        let candidateSlot: Slot;
+        let freeSlot: Slot;
         if (direction === 'contains') {
           const ring = Math.floor(containsIndex / CONTAINS_OFFSETS.length) + 1;
           const baseOffset = CONTAINS_OFFSETS[containsIndex % CONTAINS_OFFSETS.length];
           containsIndex += 1;
-          candidateSlot = {
+          const candidateSlot = {
             x: currentSlot.x + baseOffset.x * ring,
             y: currentSlot.y + baseOffset.y * ring
           };
+          freeSlot = findNearestFreeSlot(candidateSlot, occupiedSlots);
         } else if (vector) {
-          candidateSlot = findFreeSlotAlongDirection(currentSlot, vector, occupiedSlots);
+          freeSlot = findFreeSlotAlongDirection(currentSlot, vector, occupiedSlots);
         } else {
           fallbackIndex += 1;
-          candidateSlot = {
+          const candidateSlot = {
             x: currentSlot.x + 1,
             y: currentSlot.y + fallbackIndex
           };
+          freeSlot = findNearestFreeSlot(candidateSlot, occupiedSlots);
         }
 
-        const freeSlot =
-          vector && direction !== 'contains'
-            ? candidateSlot
-            : findNearestFreeSlot(candidateSlot, occupiedSlots);
         slotByLocationId.set(target.id, freeSlot);
         queue.push(target.id);
       }
