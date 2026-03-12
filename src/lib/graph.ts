@@ -58,6 +58,8 @@ const MAX_SLOT_SEARCH_RADIUS = 12;
 const MAX_DEPTH_SPACING_DISTANCE = 3;
 const POSITION_JITTER_X = 36;
 const POSITION_JITTER_Y = 28;
+const MIN_POSITION_JITTER_X = 14;
+const MIN_POSITION_JITTER_Y = 10;
 const CONTAINS_OFFSETS: Slot[] = [
   { x: 1, y: 0 },
   { x: -1, y: 0 },
@@ -126,18 +128,23 @@ function hashString(value: string): number {
   return hash;
 }
 
-function deterministicOffset(value: string, range: number): number {
-  if (range <= 0) {
+function deterministicOffset(value: string, minMagnitude: number, maxMagnitude: number): number {
+  if (maxMagnitude <= 0) {
     return 0;
   }
-  const spanSize = range * 2 + 1;
-  return (hashString(value) % spanSize) - range;
+  const clampedMinMagnitude = Math.max(0, Math.min(minMagnitude, maxMagnitude));
+  const magnitudeRange = maxMagnitude - clampedMinMagnitude + 1;
+  const hash = hashString(value);
+  const signHash = hashString(`${value}:sign`);
+  const magnitude = clampedMinMagnitude + (hash % magnitudeRange);
+  const sign = (signHash & 1) !== 0 ? 1 : -1;
+  return magnitude * sign;
 }
 
 function applyPointJitter(locationId: string, point: Point): Point {
   return {
-    x: point.x + deterministicOffset(`x:${locationId}`, POSITION_JITTER_X),
-    y: point.y + deterministicOffset(`y:${locationId}`, POSITION_JITTER_Y)
+    x: point.x + deterministicOffset(`x:${locationId}`, MIN_POSITION_JITTER_X, POSITION_JITTER_X),
+    y: point.y + deterministicOffset(`y:${locationId}`, MIN_POSITION_JITTER_Y, POSITION_JITTER_Y)
   };
 }
 
