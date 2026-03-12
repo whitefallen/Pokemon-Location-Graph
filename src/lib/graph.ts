@@ -150,8 +150,22 @@ function findNearestFreeSlot(preferred: Slot, occupiedSlots: Set<string>): Slot 
   return fallback;
 }
 
-function findFreeSlotAlongDirection(origin: Slot, vector: Slot, occupiedSlots: Set<string>): Slot {
-  for (let distance = 1; distance <= MAX_SLOT_SEARCH_RADIUS; distance += 1) {
+function findFreeSlotAlongDirection(origin: Slot, vector: Slot, occupiedSlots: Set<string>, preferredDistance = 1): Slot {
+  const boundedPreferredDistance = Math.max(1, Math.min(MAX_SLOT_SEARCH_RADIUS, preferredDistance));
+
+  for (let distance = boundedPreferredDistance; distance <= MAX_SLOT_SEARCH_RADIUS; distance += 1) {
+    const candidate = {
+      x: origin.x + vector.x * distance,
+      y: origin.y + vector.y * distance
+    };
+    const key = slotKey(candidate);
+    if (!occupiedSlots.has(key)) {
+      occupiedSlots.add(key);
+      return candidate;
+    }
+  }
+
+  for (let distance = 1; distance < boundedPreferredDistance; distance += 1) {
     const candidate = {
       x: origin.x + vector.x * distance,
       y: origin.y + vector.y * distance
@@ -165,8 +179,8 @@ function findFreeSlotAlongDirection(origin: Slot, vector: Slot, occupiedSlots: S
 
   return findNearestFreeSlot(
     {
-      x: origin.x + vector.x,
-      y: origin.y + vector.y
+      x: origin.x + vector.x * boundedPreferredDistance,
+      y: origin.y + vector.y * boundedPreferredDistance
     },
     occupiedSlots
   );
@@ -178,13 +192,14 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
   const slotByLocationId = new Map<string, Slot>();
   const locationById = new Map(dataset.locations.map((location) => [location.id, location]));
   const traverseFrom = (seedId: string) => {
-    const queue: string[] = [seedId];
+    const queue: Array<{ id: string; depth: number }> = [{ id: seedId, depth: 0 }];
 
     while (queue.length > 0) {
-      const currentId = queue.shift();
-      if (!currentId) {
+      const current = queue.shift();
+      if (!current) {
         continue;
       }
+      const { id: currentId, depth: currentDepth } = current;
 
       const currentLocation = locationById.get(currentId);
       const currentSlot = slotByLocationId.get(currentId);
@@ -215,7 +230,12 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
           };
           freeSlot = findNearestFreeSlot(candidateSlot, occupiedSlots);
         } else if (vector) {
-          freeSlot = findFreeSlotAlongDirection(currentSlot, vector, occupiedSlots);
+          freeSlot = findFreeSlotAlongDirection(
+            currentSlot,
+            vector,
+            occupiedSlots,
+            Math.min(MAX_SLOT_SEARCH_RADIUS, currentDepth + 1)
+          );
         } else {
           fallbackIndex += 1;
           const candidateSlot = {
@@ -226,7 +246,7 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
         }
 
         slotByLocationId.set(target.id, freeSlot);
-        queue.push(target.id);
+        queue.push({ id: target.id, depth: currentDepth + 1 });
       }
     }
   };
