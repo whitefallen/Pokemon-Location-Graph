@@ -16,7 +16,7 @@ interface LocationNodeProps {
 }
 
 export const LocationNode = memo(function LocationNode({ data }: LocationNodeProps) {
-  const hiddenHandleStyle = { opacity: 0, pointerEvents: 'none' } as const;
+  const hiddenHandleStyle = { opacity: 0 } as const;
   return (
     <>
       <Handle id="target-left" type="target" position={Position.Left} style={hiddenHandleStyle} />
