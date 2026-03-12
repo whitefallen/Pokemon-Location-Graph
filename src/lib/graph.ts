@@ -120,8 +120,8 @@ function slotToPoint(slot: Slot): Point {
 
 function hashString(value: string): number {
   let hash = 0;
-  for (let index = 0; index < value.length; index += 1) {
-    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  for (let charIndex = 0; charIndex < value.length; charIndex += 1) {
+    hash = (hash * 31 + value.charCodeAt(charIndex)) >>> 0;
   }
   return hash;
 }
@@ -130,8 +130,8 @@ function deterministicOffset(value: string, range: number): number {
   if (range <= 0) {
     return 0;
   }
-  const span = range * 2 + 1;
-  return (hashString(value) % span) - range;
+  const spanSize = range * 2 + 1;
+  return (hashString(value) % spanSize) - range;
 }
 
 function applyPointJitter(locationId: string, point: Point): Point {
