@@ -10,6 +10,7 @@ export const NODE_HEIGHT = 104;
 
 type Point = { x: number; y: number };
 type Slot = { x: number; y: number };
+type HandleSide = 'top' | 'right' | 'bottom' | 'left';
 
 const DIRECTION_VECTORS: Record<string, Slot> = {
   north: { x: 0, y: -1 },
@@ -33,9 +34,28 @@ const DIRECTION_PRIORITY: Record<string, number> = {
   northwest: 8,
   contains: 20
 };
+const DIRECTION_HANDLE_SIDE: Record<string, HandleSide> = {
+  north: 'top',
+  northeast: 'top',
+  northwest: 'top',
+  south: 'bottom',
+  southeast: 'bottom',
+  southwest: 'bottom',
+  east: 'right',
+  west: 'left',
+  contains: 'right'
+};
+const OPPOSITE_HANDLE_SIDE: Record<HandleSide, HandleSide> = {
+  top: 'bottom',
+  right: 'left',
+  bottom: 'top',
+  left: 'right'
+};
 
 const SLOT_STEP_X = 360;
 const SLOT_STEP_Y = 240;
+const MAX_SLOT_SEARCH_RADIUS = 12;
+const MAX_DEPTH_SPACING_DISTANCE = 4;
 const CONTAINS_OFFSETS: Slot[] = [
   { x: 1, y: 0 },
   { x: -1, y: 0 },
@@ -49,6 +69,15 @@ const CONTAINS_OFFSETS: Slot[] = [
 
 function normalizeDirection(value: string): string {
   return value.trim().toLowerCase();
+}
+
+function directionalHandleIds(direction: string): { sourceHandle: string; targetHandle: string } {
+  const sourceSide = DIRECTION_HANDLE_SIDE[normalizeDirection(direction)] ?? 'right';
+  const targetSide = OPPOSITE_HANDLE_SIDE[sourceSide];
+  return {
+    sourceHandle: `source-${sourceSide}`,
+    targetHandle: `target-${targetSide}`
+  };
 }
 
 function sortedConnections(location: LocationDataset['locations'][number]) {
@@ -93,7 +122,7 @@ function findNearestFreeSlot(preferred: Slot, occupiedSlots: Set<string>): Slot 
     return preferred;
   }
 
-  for (let radius = 1; radius <= 12; radius += 1) {
+  for (let radius = 1; radius <= MAX_SLOT_SEARCH_RADIUS; radius += 1) {
     for (let dy = -radius; dy <= radius; dy += 1) {
       for (let dx = -radius; dx <= radius; dx += 1) {
         if (Math.max(Math.abs(dx), Math.abs(dy)) !== radius) {
@@ -122,19 +151,60 @@ function findNearestFreeSlot(preferred: Slot, occupiedSlots: Set<string>): Slot 
   return fallback;
 }
 
+function findFreeSlotAlongDirection(origin: Slot, vector: Slot, occupiedSlots: Set<string>, preferredDistance = 1): Slot {
+  const boundedPreferredDistance = Math.max(1, Math.min(MAX_SLOT_SEARCH_RADIUS, preferredDistance));
+
+  for (let distance = boundedPreferredDistance; distance <= MAX_SLOT_SEARCH_RADIUS; distance += 1) {
+    const candidate = {
+      x: origin.x + vector.x * distance,
+      y: origin.y + vector.y * distance
+    };
+    const key = slotKey(candidate);
+    if (!occupiedSlots.has(key)) {
+      occupiedSlots.add(key);
+      return candidate;
+    }
+  }
+
+  for (let distance = 1; distance < boundedPreferredDistance; distance += 1) {
+    const candidate = {
+      x: origin.x + vector.x * distance,
+      y: origin.y + vector.y * distance
+    };
+    const key = slotKey(candidate);
+    if (!occupiedSlots.has(key)) {
+      occupiedSlots.add(key);
+      return candidate;
+    }
+  }
+
+  return findNearestFreeSlot(
+    {
+      x: origin.x + vector.x * boundedPreferredDistance,
+      y: origin.y + vector.y * boundedPreferredDistance
+    },
+    occupiedSlots
+  );
+}
+
+function preferredDistanceForDepth(depth: number): number {
+  return Math.min(MAX_DEPTH_SPACING_DISTANCE, Math.max(1, Math.ceil((depth + 1) / 2)));
+}
+
 function buildDirectionalPositions(dataset: LocationDataset, startLocationId: string): Map<string, Point> {
   const positions = new Map<string, Point>();
   const occupiedSlots = new Set<string>();
   const slotByLocationId = new Map<string, Slot>();
   const locationById = new Map(dataset.locations.map((location) => [location.id, location]));
   const traverseFrom = (seedId: string) => {
-    const queue: string[] = [seedId];
+    const queue: Array<{ id: string; depth: number }> = [{ id: seedId, depth: 0 }];
 
     while (queue.length > 0) {
-      const currentId = queue.shift();
-      if (!currentId) {
+      const current = queue.shift();
+      if (!current) {
         continue;
       }
+      const { id: currentId, depth: currentDepth } = current;
 
       const currentLocation = locationById.get(currentId);
       const currentSlot = slotByLocationId.get(currentId);
@@ -154,31 +224,34 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
         const direction = normalizeDirection(connection.dir);
         const vector = DIRECTION_VECTORS[direction];
 
-        let candidateSlot: Slot;
+        let freeSlot: Slot;
         if (direction === 'contains') {
           const ring = Math.floor(containsIndex / CONTAINS_OFFSETS.length) + 1;
           const baseOffset = CONTAINS_OFFSETS[containsIndex % CONTAINS_OFFSETS.length];
           containsIndex += 1;
-          candidateSlot = {
+          const candidateSlot = {
             x: currentSlot.x + baseOffset.x * ring,
             y: currentSlot.y + baseOffset.y * ring
           };
+          freeSlot = findNearestFreeSlot(candidateSlot, occupiedSlots);
         } else if (vector) {
-          candidateSlot = {
-            x: currentSlot.x + vector.x,
-            y: currentSlot.y + vector.y
-          };
+          freeSlot = findFreeSlotAlongDirection(
+            currentSlot,
+            vector,
+            occupiedSlots,
+            preferredDistanceForDepth(currentDepth)
+          );
         } else {
           fallbackIndex += 1;
-          candidateSlot = {
+          const candidateSlot = {
             x: currentSlot.x + 1,
             y: currentSlot.y + fallbackIndex
           };
+          freeSlot = findNearestFreeSlot(candidateSlot, occupiedSlots);
         }
 
-        const freeSlot = findNearestFreeSlot(candidateSlot, occupiedSlots);
         slotByLocationId.set(target.id, freeSlot);
-        queue.push(target.id);
+        queue.push({ id: target.id, depth: currentDepth + 1 });
       }
     }
   };
@@ -282,6 +355,7 @@ export function buildGraph(dataset: LocationDataset, preferredStartLocationId?: 
         id: `edge-${edgeKey}`,
         source: location.id,
         target: connection.to,
+        ...directionalHandleIds(connection.dir),
         label: connection.dir,
         markerEnd: { type: MarkerType.ArrowClosed, width: 22, height: 22 },
         type: 'smoothstep',
