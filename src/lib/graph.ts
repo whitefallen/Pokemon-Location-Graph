@@ -10,6 +10,7 @@ export const NODE_HEIGHT = 104;
 
 type Point = { x: number; y: number };
 type Slot = { x: number; y: number };
+type HandleSide = 'top' | 'right' | 'bottom' | 'left';
 
 const DIRECTION_VECTORS: Record<string, Slot> = {
   north: { x: 0, y: -1 },
@@ -33,6 +34,23 @@ const DIRECTION_PRIORITY: Record<string, number> = {
   northwest: 8,
   contains: 20
 };
+const DIRECTION_HANDLE_SIDE: Record<string, HandleSide> = {
+  north: 'top',
+  northeast: 'top',
+  northwest: 'top',
+  south: 'bottom',
+  southeast: 'bottom',
+  southwest: 'bottom',
+  east: 'right',
+  west: 'left',
+  contains: 'right'
+};
+const OPPOSITE_HANDLE_SIDE: Record<HandleSide, HandleSide> = {
+  top: 'bottom',
+  right: 'left',
+  bottom: 'top',
+  left: 'right'
+};
 
 const SLOT_STEP_X = 360;
 const SLOT_STEP_Y = 240;
@@ -50,6 +68,15 @@ const CONTAINS_OFFSETS: Slot[] = [
 
 function normalizeDirection(value: string): string {
   return value.trim().toLowerCase();
+}
+
+function directionalHandleIds(direction: string): { sourceHandle: string; targetHandle: string } {
+  const sourceSide = DIRECTION_HANDLE_SIDE[normalizeDirection(direction)] ?? 'right';
+  const targetSide = OPPOSITE_HANDLE_SIDE[sourceSide];
+  return {
+    sourceHandle: `source-${sourceSide}`,
+    targetHandle: `target-${targetSide}`
+  };
 }
 
 function sortedConnections(location: LocationDataset['locations'][number]) {
@@ -303,6 +330,7 @@ export function buildGraph(dataset: LocationDataset, preferredStartLocationId?: 
         id: `edge-${edgeKey}`,
         source: location.id,
         target: connection.to,
+        ...directionalHandleIds(connection.dir),
         label: connection.dir,
         markerEnd: { type: MarkerType.ArrowClosed, width: 22, height: 22 },
         type: 'smoothstep',
