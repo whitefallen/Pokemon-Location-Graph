@@ -55,7 +55,9 @@ const OPPOSITE_HANDLE_SIDE: Record<HandleSide, HandleSide> = {
 const SLOT_STEP_X = 360;
 const SLOT_STEP_Y = 240;
 const MAX_SLOT_SEARCH_RADIUS = 12;
-const MAX_DEPTH_SPACING_DISTANCE = 4;
+const MAX_DEPTH_SPACING_DISTANCE = 3;
+const POSITION_JITTER_X = 36;
+const POSITION_JITTER_Y = 28;
 const CONTAINS_OFFSETS: Slot[] = [
   { x: 1, y: 0 },
   { x: -1, y: 0 },
@@ -113,6 +115,29 @@ function slotToPoint(slot: Slot): Point {
   return {
     x: slot.x * SLOT_STEP_X,
     y: slot.y * SLOT_STEP_Y
+  };
+}
+
+function hashString(value: string): number {
+  let hash = 0;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  }
+  return hash;
+}
+
+function deterministicOffset(value: string, range: number): number {
+  if (range <= 0) {
+    return 0;
+  }
+  const span = range * 2 + 1;
+  return (hashString(value) % span) - range;
+}
+
+function applyPointJitter(locationId: string, point: Point): Point {
+  return {
+    x: point.x + deterministicOffset(`x:${locationId}`, POSITION_JITTER_X),
+    y: point.y + deterministicOffset(`y:${locationId}`, POSITION_JITTER_Y)
   };
 }
 
@@ -324,8 +349,9 @@ export function buildGraph(dataset: LocationDataset, preferredStartLocationId?: 
 
   const nodes: LocationFlowNode[] = dataset.locations.map((location) => {
     const center = positions.get(location.id) ?? { x: 0, y: 0 };
-    const centerX = Number.isFinite(center.x) ? center.x : 0;
-    const centerY = Number.isFinite(center.y) ? center.y : 0;
+    const jitteredCenter = applyPointJitter(location.id, center);
+    const centerX = Number.isFinite(jitteredCenter.x) ? jitteredCenter.x : 0;
+    const centerY = Number.isFinite(jitteredCenter.y) ? jitteredCenter.y : 0;
     return {
       id: location.id,
       type: 'location',
