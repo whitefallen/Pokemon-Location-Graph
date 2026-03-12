@@ -15,14 +15,15 @@ interface LocationNodeProps {
   data: LocationNodeData;
 }
 
+const hiddenHandleStyle = { opacity: 0 } as const;
+
 export const LocationNode = memo(function LocationNode({ data }: LocationNodeProps) {
-  const hiddenHandleStyle = { opacity: 0 } as const;
   return (
     <>
-      <Handle id="target-left" type="target" position={Position.Left} style={hiddenHandleStyle} />
-      <Handle id="target-right" type="target" position={Position.Right} style={hiddenHandleStyle} />
-      <Handle id="target-top" type="target" position={Position.Top} style={hiddenHandleStyle} />
-      <Handle id="target-bottom" type="target" position={Position.Bottom} style={hiddenHandleStyle} />
+      <Handle id="target-left" type="target" position={Position.Left} style={hiddenHandleStyle} isConnectable={false} />
+      <Handle id="target-right" type="target" position={Position.Right} style={hiddenHandleStyle} isConnectable={false} />
+      <Handle id="target-top" type="target" position={Position.Top} style={hiddenHandleStyle} isConnectable={false} />
+      <Handle id="target-bottom" type="target" position={Position.Bottom} style={hiddenHandleStyle} isConnectable={false} />
       <Stack gap={8} className="location-node">
         <Group justify="space-between" gap="xs" wrap="nowrap">
           <Group gap="xs" wrap="nowrap">
@@ -49,10 +50,10 @@ export const LocationNode = memo(function LocationNode({ data }: LocationNodePro
           </Group>
         </Group>
       </Stack>
-      <Handle id="source-left" type="source" position={Position.Left} style={hiddenHandleStyle} />
-      <Handle id="source-right" type="source" position={Position.Right} style={hiddenHandleStyle} />
-      <Handle id="source-top" type="source" position={Position.Top} style={hiddenHandleStyle} />
-      <Handle id="source-bottom" type="source" position={Position.Bottom} style={hiddenHandleStyle} />
+      <Handle id="source-left" type="source" position={Position.Left} style={hiddenHandleStyle} isConnectable={false} />
+      <Handle id="source-right" type="source" position={Position.Right} style={hiddenHandleStyle} isConnectable={false} />
+      <Handle id="source-top" type="source" position={Position.Top} style={hiddenHandleStyle} isConnectable={false} />
+      <Handle id="source-bottom" type="source" position={Position.Bottom} style={hiddenHandleStyle} isConnectable={false} />
     </>
   );
 });
