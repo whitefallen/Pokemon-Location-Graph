@@ -55,6 +55,7 @@ const OPPOSITE_HANDLE_SIDE: Record<HandleSide, HandleSide> = {
 const SLOT_STEP_X = 360;
 const SLOT_STEP_Y = 240;
 const MAX_SLOT_SEARCH_RADIUS = 12;
+const MAX_DEPTH_SPACING_DISTANCE = 4;
 const CONTAINS_OFFSETS: Slot[] = [
   { x: 1, y: 0 },
   { x: -1, y: 0 },
@@ -186,6 +187,10 @@ function findFreeSlotAlongDirection(origin: Slot, vector: Slot, occupiedSlots: S
   );
 }
 
+function preferredDistanceForDepth(depth: number): number {
+  return Math.min(MAX_DEPTH_SPACING_DISTANCE, Math.max(1, Math.ceil((depth + 1) / 2)));
+}
+
 function buildDirectionalPositions(dataset: LocationDataset, startLocationId: string): Map<string, Point> {
   const positions = new Map<string, Point>();
   const occupiedSlots = new Set<string>();
@@ -234,7 +239,7 @@ function buildDirectionalPositions(dataset: LocationDataset, startLocationId: st
             currentSlot,
             vector,
             occupiedSlots,
-            Math.min(MAX_SLOT_SEARCH_RADIUS, currentDepth + 1)
+            preferredDistanceForDepth(currentDepth)
           );
         } else {
           fallbackIndex += 1;
